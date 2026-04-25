@@ -399,6 +399,74 @@ body{padding-bottom:70px}
   border-radius:50px;font-size:.65rem;font-weight:700;flex-shrink:0;
 }
 
+/* ═══ PRO ONBOARD SECTION ═══ */
+.pro-onboard{
+  padding:60px 20px;
+  background:linear-gradient(135deg,#0d2461 0%,#061240 50%,#1a0a2e 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.pro-onboard::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 20%,rgba(245,166,35,.08) 0%,transparent 50%),
+             radial-gradient(circle at 20% 80%,rgba(210,16,52,.06) 0%,transparent 50%);
+}
+.pro-onboard>*{position:relative;z-index:1}
+.pro-onboard-inner{
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:40px;
+}
+@media(min-width:768px){.pro-onboard-inner{grid-template-columns:1fr 1fr;align-items:start}}
+.pro-onboard-left h2{
+  font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;line-height:1.2;
+  margin-bottom:12px;letter-spacing:-.02em;
+}
+.pro-onboard-left h2 em{color:var(--gold);font-style:normal}
+.pro-onboard-left p{color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.7;margin-bottom:24px}
+.pro-perks-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.pro-perks-list li{
+  display:flex;align-items:center;gap:12px;font-size:.88rem;font-weight:600;
+  color:rgba(255,255,255,.85);
+}
+.pro-perks-list li .perk-icon{
+  width:36px;height:36px;border-radius:10px;background:rgba(245,166,35,.15);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;
+}
+.pro-plan-tags{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
+.pro-plan-tag{
+  padding:6px 14px;border-radius:50px;font-size:.72rem;font-weight:800;
+  letter-spacing:.04em;text-transform:uppercase;
+}
+.pro-plan-tag.free{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
+.pro-plan-tag.pro{background:rgba(37,99,235,.3);color:#93c5fd}
+.pro-plan-tag.premium{background:rgba(245,166,35,.25);color:var(--gold)}
+
+.pro-onboard-form{
+  background:var(--white);border-radius:20px;padding:32px 24px;
+  box-shadow:0 24px 64px rgba(0,0,0,.3);color:var(--text);
+}
+.pro-onboard-form h3{
+  font-size:1.15rem;font-weight:900;color:var(--navy);margin-bottom:4px;text-align:center;
+}
+.pro-onboard-form .form-sub{
+  font-size:.8rem;color:var(--text-light);text-align:center;margin-bottom:20px;
+}
+.pro-onboard-form .form-step-bar{
+  display:flex;gap:4px;margin-bottom:20px;
+}
+.pro-onboard-form .form-step-bar .step-dot{
+  flex:1;height:4px;border-radius:4px;background:var(--light-gray);transition:background .3s;
+}
+.pro-onboard-form .form-step-bar .step-dot.active{background:var(--blue)}
+.pro-onboard-form .form-step-bar .step-dot.done{background:var(--green)}
+.form-step{display:none}
+.form-step.active{display:block}
+.form-step-label{
+  font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:6px;
+}
+.form-nav{display:flex;gap:8px;margin-top:16px}
+.form-nav .btn{flex:1}
+
 /* AUTH HEADER STATE */
 .header-user{display:flex;align-items:center;gap:8px}
 .header-user-name{font-size:.82rem;font-weight:700;color:var(--navy)}
@@ -488,6 +556,131 @@ body{padding-bottom:70px}
   <div class="hero-ctas">
     <a href="#post-job" class="btn btn-gold btn-lg">&#128993; Poste Yon Travay</a>
     <a href="#register" class="btn btn-blue btn-lg">Vin Pwofesyonèl (Enskri Gratis)</a>
+  </div>
+</section>
+
+<!-- PROFESSIONAL ONBOARDING -->
+<section class="pro-onboard" id="pro-onboard">
+  <div class="pro-onboard-inner">
+    <div class="pro-onboard-left">
+      <h2>Ou Se Pwofesyonèl?<br>Enskri <em>Gratis</em> Jodi a!</h2>
+      <p>Ranpli fòm nan epi vin fè pati rezo pwofesyonèl verifye ki pi gwo an Ayiti. Kliyan ap chèche ou — kite yo jwenn ou.</p>
+      <ul class="pro-perks-list">
+        <li><span class="perk-icon">&#128100;</span> Pwofil pwofesyonèl ak badge verifye</li>
+        <li><span class="perk-icon">&#128176;</span> Resevwa demann travay dirèkteman</li>
+        <li><span class="perk-icon">&#11088;</span> Bati repitasyon ak evalyasyon kliyan</li>
+        <li><span class="perk-icon">&#127891;</span> Montre diplòm ak sètifika ou</li>
+        <li><span class="perk-icon">&#128200;</span> Jwenn plis kliyan ak plan Pro</li>
+        <li><span class="perk-icon">&#128274;</span> Sekirize ak verifikasyon idantite</li>
+      </ul>
+      <div class="pro-plan-tags">
+        <span class="pro-plan-tag free">Gratis - 0 HTG</span>
+        <span class="pro-plan-tag pro">Pro - 750 HTG/mwa</span>
+        <span class="pro-plan-tag premium">Premium - 3,500 HTG/mwa</span>
+      </div>
+    </div>
+
+    <div class="pro-onboard-form">
+      <h3>Enskri Kòm Pwofesyonèl</h3>
+      <p class="form-sub">Ranpli enfòmasyon ou — kòmanse gratis</p>
+      <div class="form-step-bar">
+        <div class="step-dot active" id="stepDot1"></div>
+        <div class="step-dot" id="stepDot2"></div>
+        <div class="step-dot" id="stepDot3"></div>
+      </div>
+      <form id="proOnboardForm" onsubmit="handleProOnboard(event)">
+
+        <!-- STEP 1: Identity -->
+        <div class="form-step active" id="proStep1">
+          <div class="form-step-label">Etap 1 — Idantite Ou</div>
+          <div class="form-group">
+            <label>Non Konplè *</label>
+            <input type="text" name="full_name" placeholder="Ex: Jean Pierre Michel" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Telefòn *</label>
+              <input type="tel" name="phone" placeholder="+509 37 00 0000" required>
+            </div>
+            <div class="form-group">
+              <label>WhatsApp</label>
+              <input type="tel" name="whatsapp" placeholder="+509...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Imèl (opsyonèl)</label>
+            <input type="email" name="email" placeholder="ou@imèl.com">
+          </div>
+          <div class="form-group">
+            <label>Modpas *</label>
+            <input type="password" name="password" placeholder="Omwen 6 karaktè" required minlength="6">
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-blue" onclick="goProStep(2)">Kontinye &#8594;</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Profession -->
+        <div class="form-step" id="proStep2">
+          <div class="form-step-label">Etap 2 — Pwofesyon Ou</div>
+          <div class="form-group">
+            <label>Kategori *</label>
+            <select name="category_id" id="proOnboardCategory" required>
+              <option value="">Chwazi kategori ou...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Espesyalite / Ti Kategori *</label>
+            <input type="text" name="subcategory" placeholder="Ex: Reparasyon tiyo, Panno Solè, DJ..." required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Vil / Zòn *</label>
+              <input type="text" name="location" placeholder="Ex: Petion-Ville" required>
+            </div>
+            <div class="form-group">
+              <label>Ane Eksperyans</label>
+              <input type="number" name="years_experience" placeholder="Ex: 5" min="0" max="50">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tarif / Pri (opsyonèl)</label>
+            <input type="text" name="price_range" placeholder="Ex: 1500 HTG/jou oswa 5000 HTG/evennman">
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-outline" onclick="goProStep(1)">&#8592; Retounen</button>
+            <button type="button" class="btn btn-blue" onclick="goProStep(3)">Kontinye &#8594;</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Bio & Submit -->
+        <div class="form-step" id="proStep3">
+          <div class="form-step-label">Etap 3 — Prezante Tèt Ou</div>
+          <div class="form-group">
+            <label>Deskripsyon / Bio *</label>
+            <textarea name="description" placeholder="Dekri eksperyans ou, ki sèvis ou ofri, poukisa kliyan ta dwe chwazi ou..." rows="4" required></textarea>
+          </div>
+          <div class="form-group" style="background:var(--off-white);padding:14px;border-radius:12px;border:1.5px dashed var(--light-gray)">
+            <label style="margin-bottom:8px">Dokiman Verifikasyon (opsyonèl pou kounye a)</label>
+            <p style="font-size:.78rem;color:var(--text-light);line-height:1.5;margin:0">
+              Apre enskripsyon, ou ka telechaje dokiman sa yo nan pwofil ou pou jwenn badge verifye:
+            </p>
+            <ul style="font-size:.78rem;color:var(--text-light);line-height:1.8;margin:8px 0 0 16px">
+              <li>Pyès idantite (CIN/Paspò)</li>
+              <li>Diplòm oswa Sètifika</li>
+              <li>Lisans pwofesyonèl</li>
+              <li>Foto pwofesyonèl</li>
+            </ul>
+          </div>
+          <div class="form-error" id="proOnboardError"></div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-outline" onclick="goProStep(2)">&#8592; Retounen</button>
+            <button type="submit" class="btn btn-red" id="proOnboardBtn" style="flex:2">Enskri Kounye a &#8594;</button>
+          </div>
+        </div>
+      </form>
+      <div class="form-switch" style="margin-top:16px">Ou gen kont deja? <a onclick="openModal('loginModal')">Konekte</a></div>
+    </div>
   </div>
 </section>
 
@@ -1268,9 +1461,90 @@ document.addEventListener('click', e => {
   if (sr && hs && !hs.contains(e.target)) sr.classList.remove('active');
 });
 
+// Pro onboarding multi-step form
+function goProStep(step) {
+  const form = document.getElementById('proOnboardForm');
+  const currentStep = document.querySelector('.form-step.active');
+  const currentNum = parseInt(currentStep.id.replace('proStep',''));
+
+  if (step > currentNum) {
+    const inputs = currentStep.querySelectorAll('input[required], select[required], textarea[required]');
+    for (const inp of inputs) {
+      if (!inp.value.trim()) {
+        inp.focus();
+        inp.style.borderColor = 'var(--red)';
+        setTimeout(() => inp.style.borderColor = '', 2000);
+        return;
+      }
+    }
+  }
+
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('proStep' + step).classList.add('active');
+
+  for (let i = 1; i <= 3; i++) {
+    const dot = document.getElementById('stepDot' + i);
+    dot.classList.remove('active', 'done');
+    if (i < step) dot.classList.add('done');
+    else if (i === step) dot.classList.add('active');
+  }
+}
+
+async function handleProOnboard(e) {
+  e.preventDefault();
+  const btn = document.getElementById('proOnboardBtn');
+  const errEl = document.getElementById('proOnboardError');
+  btn.disabled = true; btn.textContent = 'Ap kreye kont...'; errEl.style.display = 'none';
+
+  const fd = new FormData(e.target);
+  const data = Object.fromEntries(fd);
+  data.role = 'professional';
+  if (data.category_id) data.category_id = parseInt(data.category_id);
+  if (data.years_experience) data.years_experience = parseInt(data.years_experience);
+
+  try {
+    const r = await fetch(API + '/auth/register', {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    authToken = j.token;
+    currentUser = j.user;
+    localStorage.setItem('prolakay_token', authToken);
+    localStorage.setItem('prolakay_user', JSON.stringify(currentUser));
+    updateAuthUI();
+    toast('Byenveni nan ProLakay, ' + currentUser.full_name + '! Pwofil ou kreye.', 'success');
+    e.target.reset();
+    goProStep(1);
+    document.getElementById('pro-onboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (err) {
+    errEl.textContent = err.message; errEl.style.display = 'block';
+  }
+  btn.disabled = false; btn.textContent = 'Enskri Kounye a →';
+}
+
+function loadProOnboardCategories() {
+  fetch(API + '/search/categories')
+    .then(r => r.json())
+    .then(data => {
+      const cats = data.categories || data || [];
+      const sel = document.getElementById('proOnboardCategory');
+      if (sel && cats.length) {
+        cats.forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c.id;
+          opt.textContent = (c.icon || '') + ' ' + (c.name_ht || c.name);
+          sel.appendChild(opt);
+        });
+      }
+    })
+    .catch(() => {});
+}
+
 // Init
 updateAuthUI();
 loadCategories();
+loadProOnboardCategories();
 </script>
 
 </body>
