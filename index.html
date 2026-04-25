@@ -466,6 +466,106 @@ body{padding-bottom:70px}
 }
 .form-nav{display:flex;gap:8px;margin-top:16px}
 .form-nav .btn{flex:1}
+.phone-verify-hint{
+  font-size:.72rem;color:var(--green);font-weight:600;margin-top:4px;
+  display:flex;align-items:center;gap:4px;
+}
+.exp-slider{display:flex;gap:6px;margin-top:6px}
+.exp-slider .exp-opt{
+  flex:1;padding:10px 4px;border-radius:10px;text-align:center;font-size:.78rem;
+  font-weight:700;border:2px solid var(--light-gray);cursor:pointer;transition:all .2s;
+  background:var(--off-white);color:var(--text);
+}
+.exp-slider .exp-opt:hover{border-color:var(--blue);background:rgba(37,99,235,.05)}
+.exp-slider .exp-opt.selected{border-color:var(--blue);background:var(--blue);color:#fff}
+.avail-toggle{display:flex;gap:6px;margin-top:6px}
+.avail-toggle .avail-opt{
+  flex:1;padding:10px 4px;border-radius:10px;text-align:center;font-size:.75rem;
+  font-weight:700;border:2px solid var(--light-gray);cursor:pointer;transition:all .2s;
+  background:var(--off-white);color:var(--text);
+}
+.avail-toggle .avail-opt:hover{border-color:var(--green)}
+.avail-toggle .avail-opt.selected{border-color:var(--green);background:var(--green);color:#fff}
+.photo-upload-area{
+  width:100px;height:100px;border-radius:50%;border:3px dashed var(--light-gray);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  margin:0 auto 12px;overflow:hidden;transition:all .2s;position:relative;
+  background:var(--off-white);
+}
+.photo-upload-area:hover{border-color:var(--blue)}
+.photo-upload-area img{width:100%;height:100%;object-fit:cover;display:none}
+.photo-upload-area .photo-placeholder{font-size:2.2rem;color:var(--text-light)}
+.photo-upload-area .photo-edit{
+  position:absolute;bottom:0;right:0;width:28px;height:28px;border-radius:50%;
+  background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:900;
+}
+.bio-counter{font-size:.7rem;color:var(--text-light);text-align:right;margin-top:2px}
+.bio-counter.over{color:var(--red)}
+.ready-toggle{
+  display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;
+  background:var(--off-white);margin-top:12px;cursor:pointer;
+}
+.ready-toggle .toggle-switch{
+  width:48px;height:26px;border-radius:13px;background:var(--light-gray);
+  position:relative;transition:background .3s;flex-shrink:0;
+}
+.ready-toggle .toggle-switch::after{
+  content:"";position:absolute;width:22px;height:22px;border-radius:50%;
+  background:#fff;top:2px;left:2px;transition:left .3s;box-shadow:0 2px 4px rgba(0,0,0,.15);
+}
+.ready-toggle.on .toggle-switch{background:var(--green)}
+.ready-toggle.on .toggle-switch::after{left:24px}
+.ready-toggle-text{font-size:.85rem;font-weight:700}
+.ready-toggle-sub{font-size:.72rem;color:var(--text-light)}
+.verify-card{
+  padding:16px;border-radius:14px;border:2px dashed var(--light-gray);
+  text-align:center;cursor:pointer;transition:all .2s;margin-bottom:10px;
+  background:var(--off-white);
+}
+.verify-card:hover{border-color:var(--blue);background:rgba(37,99,235,.03)}
+.verify-card.uploaded{border-color:var(--green);border-style:solid;background:rgba(5,150,105,.04)}
+.verify-card .v-icon{font-size:1.8rem;margin-bottom:4px}
+.verify-card .v-label{font-size:.82rem;font-weight:700;color:var(--dark)}
+.verify-card .v-status{font-size:.7rem;color:var(--text-light);margin-top:2px}
+.verify-card.uploaded .v-status{color:var(--green)}
+.badge-preview{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;
+  background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;
+  font-size:.8rem;font-weight:800;margin:16px auto 8px;
+  box-shadow:0 4px 16px rgba(37,99,235,.3);
+}
+.trust-score-bar{
+  margin:16px 0;padding:16px;border-radius:14px;background:var(--off-white);
+}
+.trust-score-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.trust-score-label span:first-child{font-size:.78rem;font-weight:700;color:var(--dark)}
+.trust-score-label span:last-child{font-size:.88rem;font-weight:900;color:var(--blue)}
+.trust-score-track{height:8px;border-radius:4px;background:var(--light-gray);overflow:hidden}
+.trust-score-fill{height:100%;border-radius:4px;transition:width .6s ease,background .6s;background:var(--blue)}
+.trust-score-items{display:flex;flex-direction:column;gap:4px;margin-top:10px}
+.trust-score-items .ts-item{
+  display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--text-light);
+}
+.trust-score-items .ts-item.done{color:var(--green);font-weight:700}
+.finish-screen{text-align:center;padding:20px 0}
+.finish-screen .finish-icon{font-size:4rem;margin-bottom:12px;animation:bounce .6s ease}
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.finish-screen h3{font-size:1.3rem;font-weight:900;color:var(--navy);margin-bottom:6px}
+.finish-screen p{font-size:.85rem;color:var(--text-light);line-height:1.6;margin-bottom:16px}
+.finish-checks{text-align:left;margin:16px 0}
+.finish-checks .fc{
+  display:flex;align-items:center;gap:10px;padding:10px 0;font-size:.85rem;font-weight:600;
+  border-bottom:1px solid var(--light-gray);
+}
+.finish-checks .fc:last-child{border-bottom:none}
+.finish-checks .fc .fc-icon{color:var(--green);font-size:1.1rem}
+.autobtn{
+  display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:8px;
+  background:rgba(37,99,235,.08);color:var(--blue);font-size:.72rem;font-weight:700;
+  border:none;cursor:pointer;margin-bottom:8px;transition:background .2s;
+}
+.autobtn:hover{background:rgba(37,99,235,.15)}
 
 /* AUTH HEADER STATE */
 .header-user{display:flex;align-items:center;gap:8px}
@@ -563,15 +663,15 @@ body{padding-bottom:70px}
 <section class="pro-onboard" id="pro-onboard">
   <div class="pro-onboard-inner">
     <div class="pro-onboard-left">
-      <h2>Ou Se Pwofesyonèl?<br>Enskri <em>Gratis</em> Jodi a!</h2>
-      <p>Ranpli fòm nan epi vin fè pati rezo pwofesyonèl verifye ki pi gwo an Ayiti. Kliyan ap chèche ou — kite yo jwenn ou.</p>
+      <h2>Fè Lajan Ak Talan Ou.<br>Enskri <em>Gratis</em> Nan 60 Segonn!</h2>
+      <p>Kliyan ap chèche pwofesyonèl tankou ou chak jou. Enskri, jwenn badge verifye, epi kòmanse resevwa travay jodi a.</p>
       <ul class="pro-perks-list">
-        <li><span class="perk-icon">&#128100;</span> Pwofil pwofesyonèl ak badge verifye</li>
-        <li><span class="perk-icon">&#128176;</span> Resevwa demann travay dirèkteman</li>
-        <li><span class="perk-icon">&#11088;</span> Bati repitasyon ak evalyasyon kliyan</li>
-        <li><span class="perk-icon">&#127891;</span> Montre diplòm ak sètifika ou</li>
-        <li><span class="perk-icon">&#128200;</span> Jwenn plis kliyan ak plan Pro</li>
-        <li><span class="perk-icon">&#128274;</span> Sekirize ak verifikasyon idantite</li>
+        <li><span class="perk-icon">&#9889;</span> Kreye pwofil nan 60 segonn</li>
+        <li><span class="perk-icon">&#9989;</span> Jwenn badge "Verified Pro"</li>
+        <li><span class="perk-icon">&#128176;</span> Kòmanse resevwa travay menm jou a</li>
+        <li><span class="perk-icon">&#11088;</span> Kliyan bay evalyasyon — bati repitasyon</li>
+        <li><span class="perk-icon">&#128200;</span> Ogmante vizibilite ak plan Pro/Premium</li>
+        <li><span class="perk-icon">&#128274;</span> Verifikasyon idantite = plis konfyans</li>
       </ul>
       <div class="pro-plan-tags">
         <span class="pro-plan-tag free">Gratis - 0 HTG</span>
@@ -581,35 +681,32 @@ body{padding-bottom:70px}
     </div>
 
     <div class="pro-onboard-form">
-      <h3>Enskri Kòm Pwofesyonèl</h3>
-      <p class="form-sub">Ranpli enfòmasyon ou — kòmanse gratis</p>
+      <h3 id="proFormTitle">Kòmanse Rapid</h3>
+      <p class="form-sub" id="proFormSub">Vin pwofesyonèl verifye — 60 segonn</p>
       <div class="form-step-bar">
         <div class="step-dot active" id="stepDot1"></div>
         <div class="step-dot" id="stepDot2"></div>
         <div class="step-dot" id="stepDot3"></div>
+        <div class="step-dot" id="stepDot4"></div>
+        <div class="step-dot" id="stepDot5"></div>
       </div>
       <form id="proOnboardForm" onsubmit="handleProOnboard(event)">
 
-        <!-- STEP 1: Identity -->
+        <!-- STEP 1: Quick Start -->
         <div class="form-step active" id="proStep1">
-          <div class="form-step-label">Etap 1 — Idantite Ou</div>
+          <div class="form-step-label">&#9889; Etap 1 — Kòmanse Rapid</div>
           <div class="form-group">
             <label>Non Konplè *</label>
             <input type="text" name="full_name" placeholder="Ex: Jean Pierre Michel" required>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Telefòn *</label>
-              <input type="tel" name="phone" placeholder="+509 37 00 0000" required>
-            </div>
-            <div class="form-group">
-              <label>WhatsApp</label>
-              <input type="tel" name="whatsapp" placeholder="+509...">
-            </div>
+          <div class="form-group">
+            <label>Telefòn *</label>
+            <input type="tel" name="phone" placeholder="+509 37 00 0000" required id="proPhone" oninput="autoFillWA()">
+            <div class="phone-verify-hint">&#128274; N ap verifye nimewo ou pou plis sekirite</div>
           </div>
           <div class="form-group">
-            <label>Imèl (opsyonèl)</label>
-            <input type="email" name="email" placeholder="ou@imèl.com">
+            <label>WhatsApp</label>
+            <input type="tel" name="whatsapp" placeholder="Menm nimewo?" id="proWhatsApp">
           </div>
           <div class="form-group">
             <label>Modpas *</label>
@@ -620,9 +717,9 @@ body{padding-bottom:70px}
           </div>
         </div>
 
-        <!-- STEP 2: Profession -->
+        <!-- STEP 2: What Do You Do -->
         <div class="form-step" id="proStep2">
-          <div class="form-step-label">Etap 2 — Pwofesyon Ou</div>
+          <div class="form-step-label">&#128736; Etap 2 — Ki Sa Ou Fè?</div>
           <div class="form-group">
             <label>Kategori *</label>
             <select name="category_id" id="proOnboardCategory" required>
@@ -630,56 +727,141 @@ body{padding-bottom:70px}
             </select>
           </div>
           <div class="form-group">
-            <label>Espesyalite / Ti Kategori *</label>
-            <input type="text" name="subcategory" placeholder="Ex: Reparasyon tiyo, Panno Solè, DJ..." required>
+            <label>Espesyalite *</label>
+            <input type="text" name="subcategory" placeholder="Ex: Reparasyon tiyo, Web Dev, DJ..." required>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Vil / Zòn *</label>
-              <input type="text" name="location" placeholder="Ex: Petion-Ville" required>
-            </div>
-            <div class="form-group">
-              <label>Ane Eksperyans</label>
-              <input type="number" name="years_experience" placeholder="Ex: 5" min="0" max="50">
+          <div class="form-group">
+            <label>Vil / Zòn *</label>
+            <input type="text" name="location" placeholder="Ex: Petion-Ville, Delmas, Cap-Haitien" required>
+          </div>
+          <div class="form-group">
+            <label>Eksperyans</label>
+            <input type="hidden" name="years_experience" id="proExp" value="2">
+            <div class="exp-slider">
+              <div class="exp-opt" onclick="selectExp(this,1)" data-val="1">0-1 an</div>
+              <div class="exp-opt selected" onclick="selectExp(this,3)" data-val="3">2-5 an</div>
+              <div class="exp-opt" onclick="selectExp(this,7)" data-val="7">5-10 an</div>
+              <div class="exp-opt" onclick="selectExp(this,12)" data-val="12">10+ an</div>
             </div>
           </div>
           <div class="form-group">
-            <label>Tarif / Pri (opsyonèl)</label>
-            <input type="text" name="price_range" placeholder="Ex: 1500 HTG/jou oswa 5000 HTG/evennman">
+            <label>Disponibilite</label>
+            <input type="hidden" name="availability" id="proAvail" value="available">
+            <div class="avail-toggle">
+              <div class="avail-opt selected" onclick="selectAvail(this,'available')">&#9203; Full-time</div>
+              <div class="avail-opt" onclick="selectAvail(this,'busy')">&#128338; Part-time</div>
+              <div class="avail-opt" onclick="selectAvail(this,'unavailable')">&#128161; On-demand</div>
+            </div>
           </div>
           <div class="form-nav">
-            <button type="button" class="btn btn-outline" onclick="goProStep(1)">&#8592; Retounen</button>
-            <button type="button" class="btn btn-blue" onclick="goProStep(3)">Kontinye &#8594;</button>
+            <button type="button" class="btn btn-outline" onclick="goProStep(1)">&#8592;</button>
+            <button type="button" class="btn btn-blue" style="flex:3" onclick="goProStep(3)">Kontinye &#8594;</button>
           </div>
         </div>
 
-        <!-- STEP 3: Bio & Submit -->
+        <!-- STEP 3: Trust & Money -->
         <div class="form-step" id="proStep3">
-          <div class="form-step-label">Etap 3 — Prezante Tèt Ou</div>
+          <div class="form-step-label">&#128176; Etap 3 — Pwofil Ou</div>
+          <div class="form-group" style="text-align:center">
+            <label>Foto Pwofil *</label>
+            <div class="photo-upload-area" onclick="document.getElementById('proPhotoInput').click()">
+              <img id="proPhotoPreview" alt="">
+              <span class="photo-placeholder">&#128247;</span>
+              <span class="photo-edit">+</span>
+            </div>
+            <input type="file" id="proPhotoInput" accept="image/*" style="display:none" onchange="previewPhoto(this)">
+            <div style="font-size:.72rem;color:var(--text-light)">Kliyan fè plis konfyans ak foto</div>
+          </div>
           <div class="form-group">
-            <label>Deskripsyon / Bio *</label>
-            <textarea name="description" placeholder="Dekri eksperyans ou, ki sèvis ou ofri, poukisa kliyan ta dwe chwazi ou..." rows="4" required></textarea>
+            <button type="button" class="autobtn" onclick="autoGenerateBio()">&#9733; Jenere bio rapid</button>
+            <label>Bio (max 120 karaktè) *</label>
+            <textarea name="description" id="proBio" placeholder="Ex: Elektrisyen ak 5 an eksperyans nan Petion-Ville..." maxlength="120" rows="2" required oninput="updateBioCounter()"></textarea>
+            <div class="bio-counter" id="bioCounter">0 / 120</div>
           </div>
-          <div class="form-group" style="background:var(--off-white);padding:14px;border-radius:12px;border:1.5px dashed var(--light-gray)">
-            <label style="margin-bottom:8px">Dokiman Verifikasyon (opsyonèl pou kounye a)</label>
-            <p style="font-size:.78rem;color:var(--text-light);line-height:1.5;margin:0">
-              Apre enskripsyon, ou ka telechaje dokiman sa yo nan pwofil ou pou jwenn badge verifye:
-            </p>
-            <ul style="font-size:.78rem;color:var(--text-light);line-height:1.8;margin:8px 0 0 16px">
-              <li>Pyès idantite (CIN/Paspò)</li>
-              <li>Diplòm oswa Sètifika</li>
-              <li>Lisans pwofesyonèl</li>
-              <li>Foto pwofesyonèl</li>
-            </ul>
+          <div class="form-group">
+            <label>Tarif / Pri</label>
+            <input type="text" name="price_range" placeholder="Ex: 1500 HTG/jou oswa 5000 HTG/evennman" id="proPrice">
           </div>
-          <div class="form-error" id="proOnboardError"></div>
-          <div class="form-nav">
-            <button type="button" class="btn btn-outline" onclick="goProStep(2)">&#8592; Retounen</button>
-            <button type="submit" class="btn btn-red" id="proOnboardBtn" style="flex:2">Enskri Kounye a &#8594;</button>
+          <div class="ready-toggle on" id="readyToggle" onclick="toggleReady()">
+            <div class="toggle-switch"></div>
+            <div>
+              <div class="ready-toggle-text">Disponib pou travay kounye a</div>
+              <div class="ready-toggle-sub">Kliyan ap wè ou disponib nan rechèch</div>
+            </div>
+          </div>
+          <div class="form-nav" style="margin-top:16px">
+            <button type="button" class="btn btn-outline" onclick="goProStep(2)">&#8592;</button>
+            <button type="button" class="btn btn-blue" style="flex:3" onclick="submitAndGoVerify()">Kontinye &#8594;</button>
           </div>
         </div>
+
+        <!-- STEP 4: Verification -->
+        <div class="form-step" id="proStep4">
+          <div class="form-step-label">&#128274; Etap 4 — Vin Verifye</div>
+          <div style="text-align:center;margin-bottom:16px">
+            <div class="badge-preview">&#9989; Verified Pro</div>
+            <p style="font-size:.78rem;color:var(--text-light);margin-top:4px">Pwofesyonèl verifye jwenn 3x plis kliyan</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+            <div class="verify-card" id="vCard1" onclick="document.getElementById('vFile1').click()">
+              <div class="v-icon">&#128179;</div>
+              <div class="v-label">Pyès ID</div>
+              <div class="v-status">CIN / Paspò</div>
+              <input type="file" id="vFile1" accept="image/*,.pdf" style="display:none" onchange="markVerifyCard('vCard1',this)">
+            </div>
+            <div class="verify-card" id="vCard2" onclick="document.getElementById('vFile2').click()">
+              <div class="v-icon">&#127891;</div>
+              <div class="v-label">Diplòm</div>
+              <div class="v-status">Sètifika</div>
+              <input type="file" id="vFile2" accept="image/*,.pdf" style="display:none" onchange="markVerifyCard('vCard2',this)">
+            </div>
+            <div class="verify-card" id="vCard3" onclick="document.getElementById('vFile3').click()">
+              <div class="v-icon">&#128196;</div>
+              <div class="v-label">Lisans</div>
+              <div class="v-status">Pwofesyonèl</div>
+              <input type="file" id="vFile3" accept="image/*,.pdf" style="display:none" onchange="markVerifyCard('vCard3',this)">
+            </div>
+          </div>
+          <div class="trust-score-bar" id="trustScoreBar">
+            <div class="trust-score-label">
+              <span>Nivo Konfyans</span>
+              <span id="trustPercent">40%</span>
+            </div>
+            <div class="trust-score-track">
+              <div class="trust-score-fill" id="trustFill" style="width:40%"></div>
+            </div>
+            <div class="trust-score-items">
+              <div class="ts-item done">&#9989; Kont kreye (+20%)</div>
+              <div class="ts-item done">&#9989; Enfòmasyon pwofesyon (+20%)</div>
+              <div class="ts-item" id="tsPhoto">&#9898; Ajoute foto (+15%)</div>
+              <div class="ts-item" id="tsID">&#9898; Ajoute pyès ID (+15%)</div>
+              <div class="ts-item" id="tsDiploma">&#9898; Ajoute diplòm (+10%)</div>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-gold" style="flex:2" onclick="goProStep(5)">&#128311; Verifye Pita</button>
+            <button type="button" class="btn btn-blue" style="flex:3" onclick="goProStep(5)">Kontinye &#8594;</button>
+          </div>
+        </div>
+
+        <!-- STEP 5: Finish -->
+        <div class="form-step" id="proStep5">
+          <div class="finish-screen">
+            <div class="finish-icon">&#127881;</div>
+            <h3>Ou Pare Pou Resevwa Kliyan!</h3>
+            <p>Pwofil ou ap vizib nan rechèch. Ou ka resevwa travay jodi a.</p>
+            <div class="finish-checks">
+              <div class="fc"><span class="fc-icon">&#9989;</span> Pwofil kreye</div>
+              <div class="fc"><span class="fc-icon">&#9989;</span> Vizib nan rechèch</div>
+              <div class="fc"><span class="fc-icon">&#9989;</span> Ka resevwa demann travay</div>
+            </div>
+            <button type="button" class="btn btn-red btn-lg" style="width:100%;margin-top:16px" onclick="closeOnboard()">Al Jwenn Kliyan &#8594;</button>
+            <button type="button" class="btn btn-outline" style="width:100%;margin-top:8px" onclick="closeOnboard();openModal('jobModal')">Poste Sèvis Ou Kounye a</button>
+          </div>
+        </div>
+
       </form>
-      <div class="form-switch" style="margin-top:16px">Ou gen kont deja? <a onclick="openModal('loginModal')">Konekte</a></div>
+      <div class="form-switch" style="margin-top:16px" id="proFormSwitch">Ou gen kont deja? <a onclick="openModal('loginModal')">Konekte</a></div>
     </div>
   </div>
 </section>
@@ -1462,12 +1644,20 @@ document.addEventListener('click', e => {
 });
 
 // Pro onboarding multi-step form
+const stepTitles = {
+  1: ['Kòmanse Rapid', 'Vin pwofesyonèl verifye — 60 segonn'],
+  2: ['Ki Sa Ou Fè?', 'Chwazi pwofesyon ou'],
+  3: ['Pwofil Ou', 'Montre kliyan kiyès ou ye'],
+  4: ['Vin Verifye', 'Gagne plis kliyan ak badge verifye'],
+  5: ['Ou Pare!', '']
+};
+let proTrustScore = 40;
+let proPhotoFile = null;
+
 function goProStep(step) {
-  const form = document.getElementById('proOnboardForm');
   const currentStep = document.querySelector('.form-step.active');
   const currentNum = parseInt(currentStep.id.replace('proStep',''));
-
-  if (step > currentNum) {
+  if (step > currentNum && step <= 3) {
     const inputs = currentStep.querySelectorAll('input[required], select[required], textarea[required]');
     for (const inp of inputs) {
       if (!inp.value.trim()) {
@@ -1478,29 +1668,134 @@ function goProStep(step) {
       }
     }
   }
-
   document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
   document.getElementById('proStep' + step).classList.add('active');
-
-  for (let i = 1; i <= 3; i++) {
+  for (let i = 1; i <= 5; i++) {
     const dot = document.getElementById('stepDot' + i);
     dot.classList.remove('active', 'done');
     if (i < step) dot.classList.add('done');
     else if (i === step) dot.classList.add('active');
   }
+  document.getElementById('proFormTitle').textContent = stepTitles[step][0];
+  document.getElementById('proFormSub').textContent = stepTitles[step][1];
+  document.getElementById('proFormSwitch').style.display = step >= 4 ? 'none' : '';
+  if (step === 4) updateTrustScore();
+  const formEl = document.querySelector('.pro-onboard-form');
+  formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-async function handleProOnboard(e) {
-  e.preventDefault();
-  const btn = document.getElementById('proOnboardBtn');
-  const errEl = document.getElementById('proOnboardError');
-  btn.disabled = true; btn.textContent = 'Ap kreye kont...'; errEl.style.display = 'none';
+function autoFillWA() {
+  const phone = document.getElementById('proPhone').value;
+  const wa = document.getElementById('proWhatsApp');
+  if (!wa.value) wa.placeholder = phone || '+509...';
+}
 
-  const fd = new FormData(e.target);
+function selectExp(el, val) {
+  document.querySelectorAll('.exp-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('proExp').value = val;
+}
+
+function selectAvail(el, val) {
+  document.querySelectorAll('.avail-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('proAvail').value = val;
+}
+
+function previewPhoto(input) {
+  if (input.files && input.files[0]) {
+    proPhotoFile = input.files[0];
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.getElementById('proPhotoPreview');
+      img.src = e.target.result;
+      img.style.display = 'block';
+      document.querySelector('.photo-placeholder').style.display = 'none';
+      proTrustScore = Math.min(100, proTrustScore + 15);
+      document.getElementById('tsPhoto').className = 'ts-item done';
+      document.getElementById('tsPhoto').innerHTML = '&#9989; Foto ajoute (+15%)';
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function updateBioCounter() {
+  const bio = document.getElementById('proBio');
+  const counter = document.getElementById('bioCounter');
+  const len = bio.value.length;
+  counter.textContent = len + ' / 120';
+  counter.className = 'bio-counter' + (len > 120 ? ' over' : '');
+}
+
+function autoGenerateBio() {
+  const cat = document.getElementById('proOnboardCategory');
+  const catText = cat.options[cat.selectedIndex] ? cat.options[cat.selectedIndex].textContent.trim() : '';
+  const spec = document.querySelector('input[name="subcategory"]').value || '';
+  const loc = document.querySelector('input[name="location"]').value || '';
+  const expEl = document.querySelector('.exp-opt.selected');
+  const exp = expEl ? expEl.textContent : '';
+  let bio = '';
+  if (spec) bio = spec;
+  else if (catText) bio = catText.replace(/^[^\s]+ /, '');
+  if (exp && exp !== '0-1 an') bio += ' ak ' + exp + ' eksperyans';
+  if (loc) bio += ' nan ' + loc;
+  bio += '. Disponib pou tout kalite pwojè.';
+  document.getElementById('proBio').value = bio.substring(0, 120);
+  updateBioCounter();
+}
+
+function toggleReady() {
+  const el = document.getElementById('readyToggle');
+  el.classList.toggle('on');
+}
+
+function markVerifyCard(cardId, input) {
+  if (input.files && input.files[0]) {
+    const card = document.getElementById(cardId);
+    card.classList.add('uploaded');
+    card.querySelector('.v-status').textContent = '&#9989; Telechaje';
+    card.querySelector('.v-status').innerHTML = '&#9989; Telechaje';
+    if (cardId === 'vCard1') {
+      proTrustScore = Math.min(100, proTrustScore + 15);
+      document.getElementById('tsID').className = 'ts-item done';
+      document.getElementById('tsID').innerHTML = '&#9989; Pyès ID ajoute (+15%)';
+    } else if (cardId === 'vCard2') {
+      proTrustScore = Math.min(100, proTrustScore + 10);
+      document.getElementById('tsDiploma').className = 'ts-item done';
+      document.getElementById('tsDiploma').innerHTML = '&#9989; Diplòm ajoute (+10%)';
+    }
+    updateTrustScore();
+  }
+}
+
+function updateTrustScore() {
+  const fill = document.getElementById('trustFill');
+  const pct = document.getElementById('trustPercent');
+  fill.style.width = proTrustScore + '%';
+  pct.textContent = proTrustScore + '%';
+  if (proTrustScore >= 80) fill.style.background = 'var(--green)';
+  else if (proTrustScore >= 60) fill.style.background = 'var(--blue)';
+  else fill.style.background = 'var(--gold)';
+}
+
+async function submitAndGoVerify() {
+  const errEl = document.getElementById('proOnboardError');
+  if (!document.getElementById('proBio').value.trim()) {
+    document.getElementById('proBio').focus();
+    document.getElementById('proBio').style.borderColor = 'var(--red)';
+    setTimeout(() => document.getElementById('proBio').style.borderColor = '', 2000);
+    return;
+  }
+  const btn = document.querySelector('#proStep3 .btn-blue');
+  btn.disabled = true; btn.textContent = 'Ap kreye kont...';
+  const fd = new FormData(document.getElementById('proOnboardForm'));
   const data = Object.fromEntries(fd);
   data.role = 'professional';
   if (data.category_id) data.category_id = parseInt(data.category_id);
   if (data.years_experience) data.years_experience = parseInt(data.years_experience);
+  if (!data.whatsapp) data.whatsapp = data.phone;
+  const isReady = document.getElementById('readyToggle').classList.contains('on');
+  data.availability_status = isReady ? 'available' : 'unavailable';
 
   try {
     const r = await fetch(API + '/auth/register', {
@@ -1513,15 +1808,35 @@ async function handleProOnboard(e) {
     localStorage.setItem('prolakay_token', authToken);
     localStorage.setItem('prolakay_user', JSON.stringify(currentUser));
     updateAuthUI();
-    toast('Byenveni nan ProLakay, ' + currentUser.full_name + '! Pwofil ou kreye.', 'success');
-    e.target.reset();
-    goProStep(1);
-    document.getElementById('pro-onboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (proPhotoFile) {
+      const photoFD = new FormData();
+      photoFD.append('photo', proPhotoFile);
+      fetch(API + '/professionals/photo', {
+        method: 'POST', headers: {'Authorization': 'Bearer ' + authToken}, body: photoFD
+      }).catch(() => {});
+    }
+
+    toast('Kont kreye! Byenveni, ' + currentUser.full_name, 'success');
+    if (proPhotoFile) {
+      proTrustScore = Math.max(proTrustScore, 55);
+      document.getElementById('tsPhoto').className = 'ts-item done';
+      document.getElementById('tsPhoto').innerHTML = '&#9989; Foto ajoute (+15%)';
+    }
+    goProStep(4);
   } catch (err) {
-    errEl.textContent = err.message; errEl.style.display = 'block';
+    if (errEl) { errEl.textContent = err.message; errEl.style.display = 'block'; }
+    else toast(err.message, 'error');
   }
-  btn.disabled = false; btn.textContent = 'Enskri Kounye a →';
+  btn.disabled = false; btn.textContent = 'Kontinye →';
 }
+
+function closeOnboard() {
+  document.getElementById('pro-onboard').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function handleProOnboard(e) { e.preventDefault(); }
 
 function loadProOnboardCategories() {
   fetch(API + '/search/categories')
