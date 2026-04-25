@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ProLakay — Jwenn Pwofesyonèl Ou Ka Fè Konfyans</title>
+<meta name="description" content="ProLakay connects you with verified professionals across Haiti. Plumbers, electricians, DJs, models, bartenders and more.">
+<meta property="og:title" content="ProLakay — Pwofesyonèl Verifye an Ayiti">
+<meta property="og:description" content="Jwenn plonbye, elektrisyen, DJ, modèl, barman — verifye toupatou an Ayiti.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A1F5C">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0A1F5C;--navy-dark:#061240;--navy-light:#1a3a8a;
+  --red:#D21034;--red-dark:#B00D2C;--red-light:#E8243F;
+  --gold:#F5A623;--gold-dark:#D4901E;
+  --blue:#2563EB;--blue-light:#3B82F6;
+  --green:#25D366;
+  --white:#FFFFFF;--off-white:#F8F9FC;--light-gray:#EEF1F8;
+  --dark:#0F1729;--text:#1E293B;--text-light:#64748B;
+  --body:'Plus Jakarta Sans',system-ui,sans-serif;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--off-white);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* ═══ HEADER ═══ */
+.header{
+  position:sticky;top:0;z-index:1000;
+  background:var(--white);border-bottom:1px solid rgba(10,31,92,.08);
+  padding:12px 20px;display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 12px rgba(10,31,92,.06);
+}
+.header-logo{display:flex;align-items:center;gap:8px}
+.header-logo img{height:36px}
+.header-search{
+  display:none;flex:1;max-width:400px;margin:0 24px;
+  position:relative;
+}
+.header-search input{
+  width:100%;padding:10px 16px 10px 36px;border:1.5px solid var(--light-gray);
+  border-radius:50px;font-size:.85rem;font-family:var(--body);background:var(--off-white);
+}
+.header-search input:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.header-search::before{content:"🔍";position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.85rem}
+.header-actions{display:flex;align-items:center;gap:8px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  padding:10px 20px;border-radius:50px;font-weight:700;font-size:.85rem;
+  font-family:var(--body);border:none;cursor:pointer;transition:all .2s;
+}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-dark)}
+.btn-gold{background:var(--gold);color:var(--dark)}
+.btn-gold:hover{background:var(--gold-dark)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-light)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{opacity:.9}
+.btn-outline{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.btn-white{background:#fff;color:var(--navy);font-weight:800}
+.btn-white:hover{background:var(--light-gray)}
+.btn-sm{padding:8px 16px;font-size:.8rem}
+.btn-lg{padding:14px 28px;font-size:.95rem}
+.header .btn-red{padding:8px 16px;font-size:.8rem}
+.header .btn-navy{padding:8px 16px;font-size:.8rem}
+.menu-btn{
+  background:none;border:none;font-size:1.5rem;cursor:pointer;
+  color:var(--navy);padding:4px 8px;display:flex;align-items:center;
+}
+@media(min-width:768px){
+  .header-search{display:flex}
+}
+
+/* ═══ HERO ═══ */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 60%,#1a0a2e 100%);
+  padding:60px 20px 50px;text-align:center;color:#fff;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><circle cx="650" cy="80" r="200" fill="rgba(255,255,255,.02)"/><circle cx="150" cy="350" r="180" fill="rgba(210,16,52,.05)"/></svg>') center/cover;
+}
+.hero>*{position:relative;z-index:1}
+.hero h1{
+  font-size:clamp(1.6rem,5vw,2.8rem);font-weight:900;line-height:1.15;
+  margin-bottom:12px;letter-spacing:-.02em;
+}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:clamp(.9rem,2.5vw,1.1rem);color:rgba(255,255,255,.75);margin-bottom:32px;line-height:1.6;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* Search bar */
+.hero-search{
+  background:var(--white);border-radius:16px;padding:8px;max-width:640px;margin:0 auto 28px;
+  display:flex;flex-direction:column;gap:8px;box-shadow:0 8px 32px rgba(0,0,0,.2);
+}
+.hero-search input{
+  width:100%;padding:14px 16px;border:1.5px solid var(--light-gray);border-radius:12px;
+  font-size:.9rem;font-family:var(--body);
+}
+.hero-search input:focus{border-color:var(--blue);outline:none}
+.hero-search .btn{width:100%;padding:14px;font-size:.95rem}
+@media(min-width:600px){
+  .hero-search{flex-direction:row;border-radius:60px;padding:6px}
+  .hero-search input{border-radius:50px;border:none;flex:1}
+  .hero-search input:focus{box-shadow:none}
+  .hero-search .btn{width:auto;min-width:180px;border-radius:50px}
+}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero-ctas .btn{font-size:.9rem;padding:14px 24px}
+
+/* ═══ TRUST BLOCK ═══ */
+.trust{padding:50px 20px;background:var(--white)}
+.section-tag{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 16px;
+  border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:12px;
+  background:rgba(10,31,92,.06);color:var(--navy);
+}
+.section-title{font-size:clamp(1.4rem,4vw,2rem);font-weight:900;line-height:1.2;margin-bottom:8px;letter-spacing:-.02em}
+.section-sub{font-size:.9rem;color:var(--text-light);line-height:1.6;max-width:520px}
+.trust-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;
+}
+@media(min-width:768px){.trust-grid{grid-template-columns:repeat(4,1fr)}}
+.trust-item{
+  text-align:center;padding:24px 16px;background:var(--off-white);border-radius:var(--radius);
+  border:1px solid rgba(10,31,92,.05);
+}
+.trust-item .icon{font-size:2rem;margin-bottom:10px}
+.trust-item h4{font-size:.85rem;font-weight:800;color:var(--navy)}
+
+/* ═══ CATEGORIES ═══ */
+.categories{padding:50px 20px;background:var(--off-white)}
+.cat-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px;
+}
+@media(min-width:600px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.cat-grid{grid-template-columns:repeat(4,1fr)}}
+.cat-card{
+  background:var(--white);border-radius:var(--radius);padding:24px 16px;text-align:center;
+  border:1px solid rgba(10,31,92,.06);cursor:pointer;transition:all .2s;
+}
+.cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(10,31,92,.08);border-color:var(--blue)}
+.cat-card .cat-icon{font-size:2rem;margin-bottom:10px}
+.cat-card h4{font-size:.85rem;font-weight:700;color:var(--dark)}
+.cat-more{text-align:center;margin-top:24px}
+
+/* ═══ FEATURED PROS ═══ */
+.featured{padding:50px 20px;background:var(--white)}
+.pro-grid{
+  display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px;
+}
+@media(min-width:600px){.pro-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.pro-grid{grid-template-columns:repeat(3,1fr)}}
+.pro-card{
+  background:var(--off-white);border-radius:var(--radius);overflow:hidden;
+  border:1px solid rgba(10,31,92,.06);transition:all .2s;
+}
+.pro-card:hover{box-shadow:0 8px 24px rgba(10,31,92,.08)}
+.pro-card-img{
+  width:100%;height:180px;background:linear-gradient(135deg,var(--navy-light),var(--navy));
+  display:flex;align-items:center;justify-content:center;font-size:4rem;color:rgba(255,255,255,.3);
+  position:relative;
+}
+.pro-badge{
+  position:absolute;top:12px;right:12px;background:var(--green);color:#fff;
+  padding:4px 10px;border-radius:50px;font-size:.7rem;font-weight:700;
+  display:flex;align-items:center;gap:4px;
+}
+.pro-card-body{padding:16px}
+.pro-card-body h4{font-size:1rem;font-weight:800;margin-bottom:2px}
+.pro-card-body .pro-role{font-size:.8rem;color:var(--text-light);margin-bottom:8px}
+.pro-meta{display:flex;align-items:center;gap:12px;font-size:.78rem;color:var(--text-light);margin-bottom:12px}
+.pro-meta .stars{color:var(--gold)}
+.pro-card-actions{display:flex;gap:8px}
+.pro-card-actions .btn{flex:1;padding:10px;font-size:.8rem}
+
+/* ═══ HOW IT WORKS ═══ */
+.how{padding:50px 20px;background:var(--off-white)}
+.steps{
+  display:grid;grid-template-columns:1fr;gap:24px;margin-top:32px;
+}
+@media(min-width:600px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{text-align:center;padding:24px 16px}
+.step-num{
+  width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.2rem;
+  margin:0 auto 16px;
+}
+.step h4{font-size:.95rem;font-weight:800;margin-bottom:6px;color:var(--dark)}
+.step p{font-size:.82rem;color:var(--text-light);line-height:1.5}
+
+/* ═══ FOR PROFESSIONALS ═══ */
+.for-pros{
+  padding:60px 20px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);
+  color:#fff;text-align:center;
+}
+.for-pros .section-tag{background:rgba(255,255,255,.1);color:var(--gold)}
+.for-pros .section-title{color:#fff}
+.for-pros .section-sub{color:rgba(255,255,255,.75);margin:0 auto}
+.for-pros .perks{
+  display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:28px 0;
+}
+.for-pros .perk{
+  display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;
+  color:rgba(255,255,255,.85);
+}
+.for-pros .perk .icon{font-size:1.3rem}
+
+/* ═══ FOR BUSINESSES ═══ */
+.for-biz{padding:50px 20px;background:var(--white);text-align:center}
+
+/* ═══ PAYMENT ═══ */
+.payment{padding:50px 20px;background:var(--off-white);text-align:center}
+.pay-methods{
+  display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:32px;
+}
+.pay-card{
+  background:var(--white);border-radius:var(--radius);padding:28px 36px;text-align:center;
+  min-width:130px;border:1px solid rgba(10,31,92,.06);
+}
+.pay-card .icon{font-size:2.5rem;margin-bottom:8px}
+.pay-card h4{font-weight:800;font-size:.95rem;color:var(--dark)}
+.pay-card p{font-size:.75rem;color:var(--text-light);margin-top:4px}
+
+/* ═══ SOCIAL PROOF ═══ */
+.proof{
+  padding:50px 20px;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);
+  color:#fff;text-align:center;
+}
+.proof-stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;
+}
+.proof-stat .num{font-size:2.5rem;font-weight:900;letter-spacing:-.02em}
+.proof-stat .label{font-size:.85rem;color:rgba(255,255,255,.8);margin-top:4px}
+
+/* ═══ WHATSAPP FLOAT ═══ */
+.wa-float{
+  position:fixed;bottom:90px;right:20px;z-index:900;
+  width:56px;height:56px;border-radius:50%;background:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(37,211,102,.4);cursor:pointer;
+  font-size:1.8rem;color:#fff;transition:transform .2s;
+}
+.wa-float:hover{transform:scale(1.1)}
+
+/* ═══ STICKY FOOTER CTA ═══ */
+.sticky-footer{
+  position:fixed;bottom:0;left:0;right:0;z-index:950;
+  background:var(--white);border-top:1px solid rgba(10,31,92,.08);
+  padding:10px 16px;display:flex;gap:8px;
+  box-shadow:0 -4px 16px rgba(0,0,0,.08);
+}
+.sticky-footer .btn{flex:1;padding:12px 8px;font-size:.78rem;text-align:center}
+@media(min-width:769px){.sticky-footer{display:none}}
+body{padding-bottom:70px}
+@media(min-width:769px){body{padding-bottom:0}}
+
+/* ═══ FOOTER ═══ */
+.footer{
+  padding:48px 20px 24px;background:var(--navy-dark);color:rgba(255,255,255,.7);
+  text-align:center;font-size:.82rem;
+}
+.footer-brand{margin-bottom:20px}
+.footer-brand img{height:32px;margin-bottom:8px;filter:brightness(10)}
+.footer-brand p{max-width:400px;margin:0 auto;line-height:1.6}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.footer-links a{color:rgba(255,255,255,.6);font-size:.8rem;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.4);border-top:1px solid rgba(255,255,255,.08);padding-top:16px}
+.footer-eco{margin-top:16px;font-size:.75rem;color:rgba(255,255,255,.35)}
+.footer-eco span{color:var(--gold);font-weight:700}
+
+/* ═══ MOBILE NAV PANEL ═══ */
+.mobile-nav{
+  position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.5);
+  display:none;backdrop-filter:blur(4px);
+}
+.mobile-nav.open{display:block}
+.mobile-nav-panel{
+  position:absolute;right:0;top:0;bottom:0;width:280px;background:var(--white);
+  padding:24px;box-shadow:-8px 0 32px rgba(0,0,0,.15);
+  animation:slideIn .25s ease;
+}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.mobile-nav-close{
+  background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-light);
+  position:absolute;top:16px;right:16px;
+}
+.mobile-nav-panel a{
+  display:block;padding:14px 0;font-size:.95rem;font-weight:600;color:var(--dark);
+  border-bottom:1px solid var(--light-gray);
+}
+.mobile-nav-panel .nav-ctas{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.mobile-nav-panel .nav-ctas .btn{width:100%;text-align:center}
+
+/* ═══ SCROLL ANIMATIONS ═══ */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="/" class="header-logo">
+    <img src="assets/logo.png" alt="ProLakay">
+  </a>
+  <div class="header-search">
+    <input type="text" placeholder="Chèche pwofesyonèl...">
+  </div>
+  <div class="header-actions">
+    <a href="#register" class="btn btn-red btn-sm">Enskri</a>
+    <a href="#login" class="btn btn-navy btn-sm" style="display:none" id="loginBtn">Konekte</a>
+    <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav" onclick="closeMenu(event)">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" onclick="toggleMenu()">&times;</button>
+    <a href="#categories">Kategori</a>
+    <a href="#featured">Pwofesyonèl</a>
+    <a href="#how">Kijan Li Mache</a>
+    <a href="#for-pros">Pou Pwofesyonèl</a>
+    <a href="#for-biz">Pou Biznis</a>
+    <a href="#payment">Peman</a>
+    <div class="nav-ctas">
+      <a href="#register" class="btn btn-red">&#128308; Enskri</a>
+      <a href="#login" class="btn btn-navy">&#128309; Konekte</a>
+      <a href="#post-job" class="btn btn-gold">&#128993; Poste Yon Travay</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Jwenn Pwofesyonèl Ou Ka <em>Fè Konfyans</em></h1>
+  <p class="hero-sub">Plonbye, DJ, modèl, elektrisyen, barman — verifye toupatou an Ayiti</p>
+
+  <div class="hero-search">
+    <input type="text" placeholder="Kisa w bezwen?">
+    <input type="text" placeholder="Kote?">
+    <button class="btn btn-red">&#128269; Chèche Kounye a</button>
+  </div>
+
+  <div class="hero-ctas">
+    <a href="#post-job" class="btn btn-gold btn-lg">&#128993; Poste Yon Travay</a>
+    <a href="#register" class="btn btn-blue btn-lg">Vin Pwofesyonèl (Enskri Gratis)</a>
+  </div>
+</section>
+
+<!-- TRUST BLOCK -->
+<section class="trust" id="trust">
+  <div class="container" style="text-align:center">
+    <div class="section-tag">&#128274; Sekirite &amp; Konfyans</div>
+    <h2 class="section-title">Sekirite &amp; Konfyans</h2>
+    <div class="trust-grid">
+      <div class="trust-item fade-up">
+        <div class="icon">&#9989;</div>
+        <h4>Pwofil Verifye</h4>
+      </div>
+      <div class="trust-item fade-up">
+        <div class="icon">&#127891;</div>
+        <h4>Diplòm &amp; Sètifika</h4>
+      </div>
+      <div class="trust-item fade-up">
+        <div class="icon">&#11088;</div>
+        <h4>Revizyon Kliyan</h4>
+      </div>
+      <div class="trust-item fade-up">
+        <div class="icon">&#128179;</div>
+        <h4>Peman Sekirize</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="container" style="text-align:center">
+    <div class="section-tag">&#129513; Kategori</div>
+    <h2 class="section-title">Jwenn Sa Ou Bezwen</h2>
+    <p class="section-sub" style="margin:8px auto 0">Chwazi nan plizyè kategori pwofesyonèl</p>
+    <div class="cat-grid">
+      <div class="cat-card fade-up"><div class="cat-icon">&#128295;</div><h4>Plonbye</h4></div>
+      <div class="cat-card fade-up"><div class="cat-icon">&#9889;</div><h4>Elektrisyen</h4></div>
+      <div class="cat-card fade-up"><div class="cat-icon">&#127911;</div><h4>DJ</h4></div>
+      <div class="cat-card fade-up"><div class="cat-icon">&#127864;</div><h4>Bartender</h4></div>
+      <div class="cat-card fade-up"><div class="cat-icon">&#128248;</div><h4>Fotogwaf</h4></div>
+      <div class="cat-card fade-up"><div class="cat-icon">&#128087;</div><h4>Modèl</h4></div>
+      <div class="cat-card fade-up"><div class="cat-icon">&#128132;</div><h4>Makeup</h4></div>
+      <div class="cat-card fade-up"><div class="cat-icon">&#129489;&#8205;&#128187;</div><h4>Freelance</h4></div>
+      <div class="cat-card fade-up"><div class="cat-icon">&#127970;</div><h4>Corporate</h4></div>
+    </div>
+    <div class="cat-more">
+      <a href="#" class="btn btn-outline">Gade Tout Kategori &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROFESSIONALS -->
+<section class="featured" id="featured">
+  <div class="container" style="text-align:center">
+    <div class="section-tag">&#11088; Pwofesyonèl</div>
+    <h2 class="section-title">Pwofesyonèl an Vedèt</h2>
+    <p class="section-sub" style="margin:8px auto 0">Pwofesyonèl verifye ki disponib kounye a</p>
+    <div class="pro-grid">
+
+      <div class="pro-card fade-up">
+        <div class="pro-card-img">&#128104;&#8205;&#128295;
+          <span class="pro-badge">&#9989; Verifye</span>
+        </div>
+        <div class="pro-card-body">
+          <h4>Jean-Pierre M.</h4>
+          <div class="pro-role">Plonbye</div>
+          <div class="pro-meta">
+            <span class="stars">&#11088; 4.8</span>
+            <span>&#128205; Petion-Ville</span>
+            <span>&#128176; 1500 HTG/jou</span>
+          </div>
+          <div class="pro-card-actions">
+            <a href="#" class="btn btn-blue btn-sm">Kontakte</a>
+            <a href="#" class="btn btn-green btn-sm">&#128172; WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pro-card fade-up">
+        <div class="pro-card-img">&#127911;
+          <span class="pro-badge">&#9989; Verifye</span>
+        </div>
+        <div class="pro-card-body">
+          <h4>DJ Maxo</h4>
+          <div class="pro-role">DJ / Animatè</div>
+          <div class="pro-meta">
+            <span class="stars">&#11088; 4.9</span>
+            <span>&#128205; Delmas</span>
+            <span>&#128176; Disponib</span>
+          </div>
+          <div class="pro-card-actions">
+            <a href="#" class="btn btn-blue btn-sm">Kontakte</a>
+            <a href="#" class="btn btn-green btn-sm">&#128172; WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pro-card fade-up">
+        <div class="pro-card-img">&#128131;
+          <span class="pro-badge">&#9989; Verifye</span>
+        </div>
+        <div class="pro-card-body">
+          <h4>Natacha B.</h4>
+          <div class="pro-role">Modèl / Makeup Artist</div>
+          <div class="pro-meta">
+            <span class="stars">&#11088; 5.0</span>
+            <span>&#128205; Tabarre</span>
+            <span>&#128176; 2000 HTG/jou</span>
+          </div>
+          <div class="pro-card-actions">
+            <a href="#" class="btn btn-blue btn-sm">Kontakte</a>
+            <a href="#" class="btn btn-green btn-sm">&#128172; WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container" style="text-align:center">
+    <div class="section-tag">&#9881; Kijan Li Mache</div>
+    <h2 class="section-title">3 Etap Senp</h2>
+    <div class="steps">
+      <div class="step fade-up">
+        <div class="step-num">1</div>
+        <h4>Chèche oswa Poste Travay</h4>
+        <p>Ekri sa ou bezwen oswa pibliye yon travay pou pwofesyonèl jwenn ou.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">2</div>
+        <h4>Chwazi Pwofesyonèl Verifye</h4>
+        <p>Gade pwofil, diplòm, evalyasyon, epi chwazi pi bon pwofesyonèl la.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">3</div>
+        <h4>Peye &amp; Travay Fèt</h4>
+        <p>Peye an sekirite. Travay la fèt. Kite yon evalyasyon apre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR PROFESSIONALS -->
+<section class="for-pros" id="for-pros">
+  <div class="container">
+    <div class="section-tag">&#128176; Pou Pwofesyonèl</div>
+    <h2 class="section-title">Fè Lajan ak ProLakay</h2>
+    <p class="section-sub">Kreye pwofil ou, montre diplòm ou, jwenn kliyan fasil</p>
+    <div class="perks">
+      <div class="perk"><span class="icon">&#128100;</span> Pwofil Gratis</div>
+      <div class="perk"><span class="icon">&#127891;</span> Montre Diplòm</div>
+      <div class="perk"><span class="icon">&#128176;</span> Jwenn Kliyan</div>
+      <div class="perk"><span class="icon">&#11088;</span> Bati Repitasyon</div>
+    </div>
+    <a href="#register" class="btn btn-red btn-lg">Enskri Gratis</a>
+  </div>
+</section>
+
+<!-- FOR BUSINESSES -->
+<section class="for-biz" id="for-biz">
+  <div class="container">
+    <div class="section-tag">&#127970; Pou Biznis</div>
+    <h2 class="section-title">Anboche Talan Rapid &amp; San Risk</h2>
+    <p class="section-sub" style="margin:8px auto 24px">Jwenn pwofesyonèl verifye pou biznis ou. Pa gen risk — peye sèlman lè travay la fèt.</p>
+    <a href="#post-job" class="btn btn-blue btn-lg">&#128309; Poste Yon Travay</a>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment" id="payment">
+  <div class="container">
+    <div class="section-tag">&#128179; Peman</div>
+    <h2 class="section-title">Nou Aksepte</h2>
+    <p class="section-sub" style="margin:8px auto 0">Peye jan ou vle. Tout metòd peman lokal aksepte.</p>
+    <div class="pay-methods">
+      <div class="pay-card">
+        <div class="icon">&#128241;</div>
+        <h4>MonCash</h4>
+        <p>Digicel</p>
+      </div>
+      <div class="pay-card">
+        <div class="icon">&#128242;</div>
+        <h4>NatCash</h4>
+        <p>Natcom</p>
+      </div>
+      <div class="pay-card">
+        <div class="icon">&#128179;</div>
+        <h4>Kat Kredi</h4>
+        <p>Visa / MC</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof">
+  <div class="container">
+    <div class="proof-stats">
+      <div class="proof-stat">
+        <div class="num">100+</div>
+        <div class="label">Pwofesyonèl Verifye</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">500+</div>
+        <div class="label">Kliyan Satisfè</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">10+</div>
+        <div class="label">Vil Disponib</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="ProLakay">
+      <p>Platfòm pou jwenn pwofesyonèl ou ka fè konfyans an Ayiti. Rapid, sekirize, fyab.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#categories">Kategori</a>
+      <a href="#how">Kijan Li Mache</a>
+      <a href="#for-pros">Pou Pwofesyonèl</a>
+      <a href="#for-biz">Pou Biznis</a>
+      <a href="#">Kontakte Nou</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 ProLakay. Tout dwa rezève.</div>
+    <div class="footer-eco">Yon platfòm <span>HaitiBiznis</span></div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/50900000000" target="_blank" class="wa-float" title="WhatsApp">&#128172;</a>
+
+<!-- STICKY FOOTER CTA (Mobile) -->
+<div class="sticky-footer">
+  <a href="#" class="btn btn-red" onclick="document.querySelector('.hero-search input').focus()">&#128269; Chèche</a>
+  <a href="#post-job" class="btn btn-gold">&#128993; Poste Travay</a>
+  <a href="#register" class="btn btn-blue">Enskri</a>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open')}
+function closeMenu(e){if(e.target===document.getElementById('mobileNav'))toggleMenu()}
+
+// Close menu on link click
+document.querySelectorAll('.mobile-nav-panel a').forEach(a=>{
+  a.addEventListener('click',()=>toggleMenu());
+});
+
+// Show login btn on desktop
+if(window.innerWidth>=768) document.getElementById('loginBtn').style.display='inline-flex';
+
+// Scroll animations
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
