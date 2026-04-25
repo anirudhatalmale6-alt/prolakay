@@ -307,6 +307,135 @@ body{padding-bottom:70px}
 /* ═══ SCROLL ANIMATIONS ═══ */
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* MODAL */
+.modal-overlay{
+  position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.55);
+  display:none;align-items:center;justify-content:center;
+  backdrop-filter:blur(4px);padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:var(--white);border-radius:20px;width:100%;max-width:440px;
+  max-height:90vh;overflow-y:auto;padding:32px 24px;position:relative;
+  box-shadow:0 24px 64px rgba(0,0,0,.2);animation:modalIn .25s ease;
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{
+  position:absolute;top:14px;right:14px;background:var(--light-gray);
+  border:none;width:32px;height:32px;border-radius:50%;font-size:1.2rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-light);
+}
+.modal-close:hover{background:var(--red);color:#fff}
+.modal h2{font-size:1.3rem;font-weight:900;margin-bottom:4px;color:var(--navy)}
+.modal .modal-sub{font-size:.85rem;color:var(--text-light);margin-bottom:24px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:10px;
+  font-size:.88rem;font-family:var(--body);background:var(--off-white);
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.1);
+}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-error{color:var(--red);font-size:.75rem;margin-top:4px;display:none}
+.form-switch{font-size:.82rem;color:var(--text-light);margin-top:16px;text-align:center}
+.form-switch a{color:var(--blue);font-weight:700;cursor:pointer}
+.form-switch a:hover{text-decoration:underline}
+.btn-submit{width:100%;padding:14px;font-size:.95rem;margin-top:8px}
+.btn-submit:disabled{opacity:.5;cursor:not-allowed}
+
+/* STAR RATING */
+.star-rating{display:inline-flex;gap:2px;direction:rtl}
+.star-rating input{display:none}
+.star-rating label{
+  font-size:1.5rem;color:var(--light-gray);cursor:pointer;transition:color .15s;
+  line-height:1;
+}
+.star-rating label:hover,
+.star-rating label:hover~label,
+.star-rating input:checked~label{color:var(--gold)}
+.stars-display{display:inline-flex;gap:1px;font-size:.85rem}
+.stars-display .star-filled{color:var(--gold)}
+.stars-display .star-empty{color:var(--light-gray)}
+
+/* TOAST */
+.toast-container{position:fixed;top:20px;right:20px;z-index:4000;display:flex;flex-direction:column;gap:8px}
+.toast{
+  padding:14px 20px;border-radius:12px;font-size:.85rem;font-weight:600;
+  color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.15);
+  animation:toastIn .3s ease;min-width:280px;
+}
+.toast-success{background:#059669}
+.toast-error{background:var(--red)}
+.toast-info{background:var(--navy)}
+@keyframes toastIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+
+/* SEARCH RESULTS */
+.search-results{
+  position:absolute;top:100%;left:0;right:0;background:var(--white);
+  border-radius:0 0 16px 16px;box-shadow:0 12px 32px rgba(0,0,0,.15);
+  max-height:400px;overflow-y:auto;display:none;z-index:10;
+}
+.search-results.active{display:block}
+.search-result-item{
+  padding:14px 20px;display:flex;align-items:center;gap:14px;
+  border-bottom:1px solid var(--light-gray);cursor:pointer;transition:background .15s;
+}
+.search-result-item:hover{background:var(--off-white)}
+.search-result-item:last-child{border-bottom:none}
+.sr-avatar{
+  width:44px;height:44px;border-radius:12px;background:var(--navy);
+  color:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;flex-shrink:0;
+}
+.sr-info h4{font-size:.88rem;font-weight:700;color:var(--dark)}
+.sr-info p{font-size:.75rem;color:var(--text-light)}
+.sr-info .sr-stars{display:flex;align-items:center;gap:4px;margin-top:2px}
+.sr-badge{
+  margin-left:auto;background:var(--green);color:#fff;padding:3px 8px;
+  border-radius:50px;font-size:.65rem;font-weight:700;flex-shrink:0;
+}
+
+/* AUTH HEADER STATE */
+.header-user{display:flex;align-items:center;gap:8px}
+.header-user-name{font-size:.82rem;font-weight:700;color:var(--navy)}
+.header-user-avatar{
+  width:32px;height:32px;border-radius:50%;background:var(--navy);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:900;
+}
+.logged-in .guest-only{display:none!important}
+.logged-out .auth-only{display:none!important}
+
+/* REVIEW MODAL */
+.review-pro-name{font-size:1.1rem;font-weight:800;color:var(--dark);text-align:center;margin-bottom:4px}
+.review-star-select{display:flex;gap:6px;justify-content:center;margin:16px 0}
+.review-star-select span{
+  font-size:2rem;cursor:pointer;color:var(--light-gray);transition:all .15s;
+}
+.review-star-select span.active{color:var(--gold);transform:scale(1.15)}
+.review-star-select span:hover{color:var(--gold);transform:scale(1.2)}
+
+/* PRO DETAIL MODAL */
+.pro-detail-header{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.pro-detail-avatar{
+  width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,var(--navy-light),var(--navy));
+  display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:rgba(255,255,255,.3);flex-shrink:0;
+}
+.pro-detail-info h3{font-size:1.2rem;font-weight:900;color:var(--dark)}
+.pro-detail-info .pro-role{font-size:.85rem;color:var(--text-light)}
+.pro-detail-stars{margin-top:4px}
+.pro-detail-section{margin-top:20px;padding-top:16px;border-top:1px solid var(--light-gray)}
+.pro-detail-section h4{font-size:.85rem;font-weight:800;color:var(--navy);margin-bottom:10px}
+.review-item{padding:12px 0;border-bottom:1px solid var(--light-gray)}
+.review-item:last-child{border-bottom:none}
+.review-item-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.review-item-header strong{font-size:.82rem}
+.review-item p{font-size:.8rem;color:var(--text-light);line-height:1.5}
+.no-reviews{font-size:.82rem;color:var(--text-light);font-style:italic}
 </style>
 </head>
 <body>
@@ -349,10 +478,11 @@ body{padding-bottom:70px}
   <h1>Jwenn Pwofesyonèl Ou Ka <em>Fè Konfyans</em></h1>
   <p class="hero-sub">Doktè, enjenyè, avoka, elektrisyen, DJ, modèl — tout pwofesyonèl verifye an Ayiti</p>
 
-  <div class="hero-search">
-    <input type="text" placeholder="Kisa w bezwen?">
-    <input type="text" placeholder="Kote?">
-    <button class="btn btn-red">&#128269; Chèche Kounye a</button>
+  <div class="hero-search" style="position:relative">
+    <input type="text" placeholder="Kisa w bezwen?" id="heroSearch" oninput="handleSearch(this.value)">
+    <input type="text" placeholder="Kote?" id="heroLocation">
+    <button class="btn btn-red" onclick="handleSearch(document.getElementById('heroSearch').value)">&#128269; Chèche Kounye a</button>
+    <div class="search-results"></div>
   </div>
 
   <div class="hero-ctas">
@@ -496,13 +626,15 @@ body{padding-bottom:70px}
           <h4>Jean-Pierre M.</h4>
           <div class="pro-role">Plonbye</div>
           <div class="pro-meta">
-            <span class="stars">&#11088; 4.8</span>
+            <span class="stars-display"><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span></span>
+            <span>4.8</span>
             <span>&#128205; Petion-Ville</span>
             <span>&#128176; 1500 HTG/jou</span>
           </div>
           <div class="pro-card-actions">
-            <a href="#" class="btn btn-blue btn-sm">Kontakte</a>
-            <a href="#" class="btn btn-green btn-sm">&#128172; WhatsApp</a>
+            <a href="#" class="btn btn-blue btn-sm" onclick="event.preventDefault();openProDetail(1)">Wè Pwofil</a>
+            <a href="#" class="btn btn-gold btn-sm" onclick="event.preventDefault();openReviewModal(1,'Jean-Pierre M.')">&#11088; Evalye</a>
+            <a href="#" class="btn btn-green btn-sm">&#128172;</a>
           </div>
         </div>
       </div>
@@ -515,13 +647,15 @@ body{padding-bottom:70px}
           <h4>DJ Maxo</h4>
           <div class="pro-role">DJ / Animatè</div>
           <div class="pro-meta">
-            <span class="stars">&#11088; 4.9</span>
+            <span class="stars-display"><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span></span>
+            <span>4.9</span>
             <span>&#128205; Delmas</span>
             <span>&#128176; Disponib</span>
           </div>
           <div class="pro-card-actions">
-            <a href="#" class="btn btn-blue btn-sm">Kontakte</a>
-            <a href="#" class="btn btn-green btn-sm">&#128172; WhatsApp</a>
+            <a href="#" class="btn btn-blue btn-sm" onclick="event.preventDefault();openProDetail(2)">Wè Pwofil</a>
+            <a href="#" class="btn btn-gold btn-sm" onclick="event.preventDefault();openReviewModal(2,'DJ Maxo')">&#11088; Evalye</a>
+            <a href="#" class="btn btn-green btn-sm">&#128172;</a>
           </div>
         </div>
       </div>
@@ -534,13 +668,15 @@ body{padding-bottom:70px}
           <h4>Natacha B.</h4>
           <div class="pro-role">Modèl / Makeup Artist</div>
           <div class="pro-meta">
-            <span class="stars">&#11088; 5.0</span>
+            <span class="stars-display"><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span><span class="star-filled">&#9733;</span></span>
+            <span>5.0</span>
             <span>&#128205; Tabarre</span>
             <span>&#128176; 2000 HTG/jou</span>
           </div>
           <div class="pro-card-actions">
-            <a href="#" class="btn btn-blue btn-sm">Kontakte</a>
-            <a href="#" class="btn btn-green btn-sm">&#128172; WhatsApp</a>
+            <a href="#" class="btn btn-blue btn-sm" onclick="event.preventDefault();openProDetail(3)">Wè Pwofil</a>
+            <a href="#" class="btn btn-gold btn-sm" onclick="event.preventDefault();openReviewModal(3,'Natacha B.')">&#11088; Evalye</a>
+            <a href="#" class="btn btn-green btn-sm">&#128172;</a>
           </div>
         </div>
       </div>
@@ -675,7 +811,439 @@ body{padding-bottom:70px}
   <a href="#register" class="btn btn-blue">Enskri</a>
 </div>
 
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toasts"></div>
+
+<!-- REGISTER MODAL -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('registerModal')">&times;</button>
+    <h2>Kreye Kont Ou</h2>
+    <p class="modal-sub">Enskri gratis epi jwenn pwofesyonèl verifye</p>
+    <form id="registerForm" onsubmit="handleRegister(event)">
+      <div class="form-group">
+        <label>Non Konplè</label>
+        <input type="text" name="full_name" placeholder="Ex: Jean Pierre" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Telefòn</label>
+          <input type="tel" name="phone" placeholder="+509..." required>
+        </div>
+        <div class="form-group">
+          <label>Imèl (opsyonèl)</label>
+          <input type="email" name="email" placeholder="ou@imèl.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Modpas</label>
+        <input type="password" name="password" placeholder="Omwen 6 karaktè" required minlength="6">
+      </div>
+      <div class="form-group">
+        <label>Mwen se...</label>
+        <select name="role">
+          <option value="client">Kliyan (m ap chèche pwofesyonèl)</option>
+          <option value="professional">Pwofesyonèl (m ap ofri sèvis)</option>
+        </select>
+      </div>
+      <div class="form-error" id="registerError"></div>
+      <button type="submit" class="btn btn-red btn-submit" id="registerBtn">Kreye Kont</button>
+    </form>
+    <div class="form-switch">Ou gen kont deja? <a onclick="switchModal('registerModal','loginModal')">Konekte</a></div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+    <h2>Konekte</h2>
+    <p class="modal-sub">Antre nan kont ou</p>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label>Telefòn</label>
+        <input type="tel" name="phone" placeholder="+509..." required>
+      </div>
+      <div class="form-group">
+        <label>Modpas</label>
+        <input type="password" name="password" placeholder="Modpas ou" required>
+      </div>
+      <div class="form-error" id="loginError"></div>
+      <button type="submit" class="btn btn-navy btn-submit" id="loginBtn">Konekte</button>
+    </form>
+    <div class="form-switch">Ou pa gen kont? <a onclick="switchModal('loginModal','registerModal')">Enskri Gratis</a></div>
+  </div>
+</div>
+
+<!-- POST JOB MODAL -->
+<div class="modal-overlay" id="jobModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('jobModal')">&times;</button>
+    <h2>Poste Yon Travay</h2>
+    <p class="modal-sub">Dekri sa ou bezwen, pwofesyonèl yo ap jwenn ou</p>
+    <form id="jobForm" onsubmit="handlePostJob(event)">
+      <div class="form-group">
+        <label>Tit Travay</label>
+        <input type="text" name="title" placeholder="Ex: Bezwen plonbye pou kay" required>
+      </div>
+      <div class="form-group">
+        <label>Kategori</label>
+        <select name="category_id" id="jobCategory" required>
+          <option value="">Chwazi yon kategori...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Deskripsyon</label>
+        <textarea name="description" placeholder="Bay plis detay sou travay la..." required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Kote</label>
+          <input type="text" name="location" placeholder="Ex: Petion-Ville" required>
+        </div>
+        <div class="form-group">
+          <label>Bidjè (HTG)</label>
+          <input type="number" name="budget" placeholder="Ex: 5000">
+        </div>
+      </div>
+      <div class="form-error" id="jobError"></div>
+      <button type="submit" class="btn btn-gold btn-submit" id="jobBtn">Pibliye Travay</button>
+    </form>
+  </div>
+</div>
+
+<!-- PRO DETAIL MODAL -->
+<div class="modal-overlay" id="proDetailModal">
+  <div class="modal" style="max-width:520px">
+    <button class="modal-close" onclick="closeModal('proDetailModal')">&times;</button>
+    <div id="proDetailContent"></div>
+  </div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div class="modal-overlay" id="reviewModal">
+  <div class="modal" style="max-width:400px">
+    <button class="modal-close" onclick="closeModal('reviewModal')">&times;</button>
+    <h2 style="text-align:center">Bay Evalyasyon</h2>
+    <div class="review-pro-name" id="reviewProName"></div>
+    <div class="review-star-select" id="reviewStars">
+      <span onclick="setReviewStar(1)" data-star="1">&#11088;</span>
+      <span onclick="setReviewStar(2)" data-star="2">&#11088;</span>
+      <span onclick="setReviewStar(3)" data-star="3">&#11088;</span>
+      <span onclick="setReviewStar(4)" data-star="4">&#11088;</span>
+      <span onclick="setReviewStar(5)" data-star="5">&#11088;</span>
+    </div>
+    <form id="reviewForm" onsubmit="handleReview(event)">
+      <input type="hidden" name="professional_id" id="reviewProId">
+      <input type="hidden" name="rating" id="reviewRating" value="0">
+      <div class="form-group">
+        <label>Kòmantè (opsyonèl)</label>
+        <textarea name="comment" placeholder="Ki eksperyans ou te fè?"></textarea>
+      </div>
+      <div class="form-error" id="reviewError"></div>
+      <button type="submit" class="btn btn-gold btn-submit">Voye Evalyasyon</button>
+    </form>
+  </div>
+</div>
+
 <script>
+const API = 'https://prolakay-api.onrender.com/api';
+let authToken = localStorage.getItem('prolakay_token');
+let currentUser = JSON.parse(localStorage.getItem('prolakay_user') || 'null');
+
+function updateAuthUI() {
+  const body = document.body;
+  if (authToken && currentUser) {
+    body.classList.add('logged-in');
+    body.classList.remove('logged-out');
+    const actions = document.querySelector('.header-actions');
+    const existing = actions.querySelector('.header-user');
+    if (existing) existing.remove();
+    const initials = currentUser.full_name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+    const div = document.createElement('div');
+    div.className = 'header-user';
+    div.innerHTML = '<span class="header-user-name">' + currentUser.full_name.split(' ')[0] + '</span><div class="header-user-avatar">' + initials + '</div>';
+    actions.insertBefore(div, actions.querySelector('.menu-btn'));
+  } else {
+    body.classList.add('logged-out');
+    body.classList.remove('logged-in');
+    const existing = document.querySelector('.header-user');
+    if (existing) existing.remove();
+  }
+}
+
+function toast(msg, type) {
+  const c = document.getElementById('toasts');
+  const t = document.createElement('div');
+  t.className = 'toast toast-' + (type || 'info');
+  t.textContent = msg;
+  c.appendChild(t);
+  setTimeout(() => t.remove(), 4000);
+}
+
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function switchModal(from, to) { closeModal(from); setTimeout(() => openModal(to), 200); }
+
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); });
+});
+
+document.querySelectorAll('a[href="#register"]').forEach(a => {
+  a.addEventListener('click', e => { e.preventDefault(); openModal('registerModal'); });
+});
+document.querySelectorAll('a[href="#login"]').forEach(a => {
+  a.addEventListener('click', e => { e.preventDefault(); openModal('loginModal'); });
+});
+document.querySelectorAll('a[href="#post-job"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    if (!authToken) { toast('Ou dwe konekte anvan', 'error'); openModal('loginModal'); return; }
+    openModal('jobModal');
+  });
+});
+
+async function handleRegister(e) {
+  e.preventDefault();
+  const btn = document.getElementById('registerBtn');
+  const errEl = document.getElementById('registerError');
+  btn.disabled = true; btn.textContent = 'Ap kreye...'; errEl.style.display = 'none';
+  const fd = new FormData(e.target);
+  const data = Object.fromEntries(fd);
+  try {
+    const r = await fetch(API + '/auth/register', {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    authToken = j.token;
+    currentUser = j.user;
+    localStorage.setItem('prolakay_token', authToken);
+    localStorage.setItem('prolakay_user', JSON.stringify(currentUser));
+    updateAuthUI();
+    closeModal('registerModal');
+    toast('Byenveni, ' + currentUser.full_name + '!', 'success');
+    e.target.reset();
+  } catch (err) {
+    errEl.textContent = err.message; errEl.style.display = 'block';
+  }
+  btn.disabled = false; btn.textContent = 'Kreye Kont';
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  const btn = document.getElementById('loginBtn');
+  const errEl = document.getElementById('loginError');
+  btn.disabled = true; btn.textContent = 'Ap konekte...'; errEl.style.display = 'none';
+  const fd = new FormData(e.target);
+  const data = Object.fromEntries(fd);
+  try {
+    const r = await fetch(API + '/auth/login', {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    authToken = j.token;
+    currentUser = j.user;
+    localStorage.setItem('prolakay_token', authToken);
+    localStorage.setItem('prolakay_user', JSON.stringify(currentUser));
+    updateAuthUI();
+    closeModal('loginModal');
+    toast('Konekte! Byenveni, ' + currentUser.full_name, 'success');
+    e.target.reset();
+  } catch (err) {
+    errEl.textContent = err.message; errEl.style.display = 'block';
+  }
+  btn.disabled = false; btn.textContent = 'Konekte';
+}
+
+async function handlePostJob(e) {
+  e.preventDefault();
+  const btn = document.getElementById('jobBtn');
+  const errEl = document.getElementById('jobError');
+  btn.disabled = true; btn.textContent = 'Ap pibliye...'; errEl.style.display = 'none';
+  const fd = new FormData(e.target);
+  const data = Object.fromEntries(fd);
+  if (data.budget) data.budget = parseInt(data.budget);
+  if (data.category_id) data.category_id = parseInt(data.category_id);
+  try {
+    const r = await fetch(API + '/jobs', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken},
+      body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    closeModal('jobModal');
+    toast('Travay pibliye avèk siksè!', 'success');
+    e.target.reset();
+  } catch (err) {
+    errEl.textContent = err.message; errEl.style.display = 'block';
+  }
+  btn.disabled = false; btn.textContent = 'Pibliye Travay';
+}
+
+let reviewSelectedRating = 0;
+function setReviewStar(n) {
+  reviewSelectedRating = n;
+  document.getElementById('reviewRating').value = n;
+  document.querySelectorAll('#reviewStars span').forEach(s => {
+    s.classList.toggle('active', parseInt(s.dataset.star) <= n);
+  });
+}
+
+function openReviewModal(proId, proName) {
+  if (!authToken) { toast('Ou dwe konekte pou bay evalyasyon', 'error'); openModal('loginModal'); return; }
+  document.getElementById('reviewProId').value = proId;
+  document.getElementById('reviewProName').textContent = proName;
+  reviewSelectedRating = 0;
+  document.querySelectorAll('#reviewStars span').forEach(s => s.classList.remove('active'));
+  document.getElementById('reviewForm').reset();
+  openModal('reviewModal');
+}
+
+async function handleReview(e) {
+  e.preventDefault();
+  const errEl = document.getElementById('reviewError');
+  errEl.style.display = 'none';
+  if (reviewSelectedRating === 0) { errEl.textContent = 'Tanpri chwazi yon nòt (1-5 etwal)'; errEl.style.display = 'block'; return; }
+  const fd = new FormData(e.target);
+  const data = { professional_id: parseInt(fd.get('professional_id')), rating: reviewSelectedRating, comment: fd.get('comment') || '' };
+  try {
+    const r = await fetch(API + '/reviews', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken},
+      body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    closeModal('reviewModal');
+    toast('Mèsi pou evalyasyon ou!', 'success');
+  } catch (err) {
+    errEl.textContent = err.message; errEl.style.display = 'block';
+  }
+}
+
+function renderStars(rating, size) {
+  const full = Math.round(rating);
+  let html = '';
+  for (let i = 1; i <= 5; i++) {
+    html += '<span class="' + (i <= full ? 'star-filled' : 'star-empty') + '">&#9733;</span>';
+  }
+  return '<span class="stars-display" style="font-size:' + (size || '.85rem') + '">' + html + '</span>';
+}
+
+async function openProDetail(proId) {
+  const c = document.getElementById('proDetailContent');
+  c.innerHTML = '<p style="text-align:center;padding:40px;color:var(--text-light)">Ap chaje...</p>';
+  openModal('proDetailModal');
+  try {
+    const [proRes, revRes] = await Promise.all([
+      fetch(API + '/professionals/' + proId),
+      fetch(API + '/reviews/professional/' + proId)
+    ]);
+    const pro = await proRes.json();
+    const reviews = await revRes.json();
+    const p = pro.professional || pro;
+    const user = p.User || p.user || {};
+    const name = user.full_name || p.full_name || 'Pwofesyonèl';
+    const role = p.subcategory || (p.Category ? p.Category.name_ht : '');
+    const rating = p.rating || 0;
+    const totalR = p.total_reviews || 0;
+    const loc = p.location || '';
+    const desc = p.description || '';
+    const revList = reviews.reviews || reviews || [];
+
+    let html = '<div class="pro-detail-header">';
+    html += '<div class="pro-detail-avatar">&#128100;</div>';
+    html += '<div class="pro-detail-info"><h3>' + name + '</h3>';
+    html += '<div class="pro-role">' + role + (loc ? ' &middot; ' + loc : '') + '</div>';
+    html += '<div class="pro-detail-stars">' + renderStars(rating) + ' <span style="font-size:.78rem;color:var(--text-light);margin-left:4px">' + rating.toFixed(1) + ' (' + totalR + ' evalyasyon)</span></div>';
+    html += '</div></div>';
+    if (desc) html += '<p style="font-size:.85rem;color:var(--text-light);line-height:1.6">' + desc + '</p>';
+    html += '<div style="display:flex;gap:8px;margin-top:16px">';
+    html += '<button class="btn btn-blue" style="flex:1" onclick="closeModal(\'proDetailModal\')">Kontakte</button>';
+    html += '<button class="btn btn-gold" style="flex:1" onclick="closeModal(\'proDetailModal\');openReviewModal(' + proId + ',\'' + name.replace(/'/g,"\\'") + '\')">&#11088; Bay Evalyasyon</button>';
+    html += '</div>';
+    html += '<div class="pro-detail-section"><h4>Evalyasyon (' + revList.length + ')</h4>';
+    if (revList.length === 0) {
+      html += '<p class="no-reviews">Pa gen evalyasyon ankò</p>';
+    } else {
+      revList.slice(0, 10).forEach(r => {
+        const rUser = r.User || r.client || {};
+        html += '<div class="review-item"><div class="review-item-header"><strong>' + (rUser.full_name || 'Kliyan') + '</strong>' + renderStars(r.rating, '.75rem') + '</div>';
+        if (r.comment) html += '<p>' + r.comment + '</p>';
+        html += '</div>';
+      });
+    }
+    html += '</div>';
+    c.innerHTML = html;
+  } catch (err) {
+    c.innerHTML = '<p style="text-align:center;padding:40px;color:var(--red)">Pa ka chaje pwofil la. API pa disponib.</p>';
+  }
+}
+
+let searchTimeout;
+async function handleSearch(query) {
+  const resultsEl = document.querySelector('.search-results');
+  if (!resultsEl) return;
+  if (!query || query.length < 2) { resultsEl.classList.remove('active'); return; }
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(async () => {
+    try {
+      const r = await fetch(API + '/search?q=' + encodeURIComponent(query));
+      const data = await r.json();
+      const pros = data.professionals || data.results || data || [];
+      if (!Array.isArray(pros) || pros.length === 0) {
+        resultsEl.innerHTML = '<div class="search-result-item"><div class="sr-info"><p>Pa gen rezilta pou "' + query + '"</p></div></div>';
+        resultsEl.classList.add('active');
+        return;
+      }
+      let html = '';
+      pros.slice(0, 8).forEach(p => {
+        const user = p.User || p.user || {};
+        const name = user.full_name || p.full_name || 'Pwofesyonèl';
+        const role = p.subcategory || '';
+        const rating = p.rating || 0;
+        const verified = p.is_verified;
+        html += '<div class="search-result-item" onclick="openProDetail(' + p.id + ')">';
+        html += '<div class="sr-avatar">&#128100;</div>';
+        html += '<div class="sr-info"><h4>' + name + '</h4><p>' + role + (p.location ? ' &middot; ' + p.location : '') + '</p>';
+        html += '<div class="sr-stars">' + renderStars(rating, '.7rem') + '</div></div>';
+        if (verified) html += '<span class="sr-badge">&#9989; Verifye</span>';
+        html += '</div>';
+      });
+      resultsEl.innerHTML = html;
+      resultsEl.classList.add('active');
+    } catch (err) {
+      resultsEl.classList.remove('active');
+    }
+  }, 300);
+}
+
+async function loadCategories() {
+  try {
+    const r = await fetch(API + '/search/categories');
+    const data = await r.json();
+    const cats = data.categories || data || [];
+    const sel = document.getElementById('jobCategory');
+    if (sel && cats.length) {
+      cats.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.id;
+        opt.textContent = c.name_ht || c.name;
+        sel.appendChild(opt);
+      });
+    }
+  } catch (err) {}
+}
+
 function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open')}
 function closeMenu(e){if(e.target===document.getElementById('mobileNav'))toggleMenu()}
 
@@ -692,6 +1260,17 @@ const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
 },{threshold:.1});
 document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+// Close search on outside click
+document.addEventListener('click', e => {
+  const sr = document.querySelector('.search-results');
+  const hs = document.querySelector('.hero-search');
+  if (sr && hs && !hs.contains(e.target)) sr.classList.remove('active');
+});
+
+// Init
+updateAuthUI();
+loadCategories();
 </script>
 
 </body>
