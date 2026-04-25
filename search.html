@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ProLakay — Jwenn Pwofesyonèl Verifye an Ayiti</title>
+<meta name="description" content="Chèche epi jwenn pwofesyonèl verifye an Ayiti. Plonbye, elektrisyen, DJ, doktè, avoka ak plis ankò.">
+<meta property="og:title" content="ProLakay — Jwenn Pwofesyonèl Verifye">
+<meta property="og:description" content="Chèche pami pwofesyonèl verifye an Ayiti. Rapid, sekirize, fyab.">
+<meta name="theme-color" content="#0A1F5C">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0A1F5C;--navy-dark:#061240;--navy-light:#1a3a8a;
+  --red:#E11D2E;--red-dark:#C4182A;--red-glow:rgba(225,29,46,.35);
+  --gold:#FBBF24;--gold-dark:#E5A91C;--gold-glow:rgba(251,191,36,.3);
+  --blue:#2563EB;--blue-light:#3B82F6;
+  --green:#25D366;--green-dark:#1EBB5A;
+  --white:#FFFFFF;--off-white:#F7F8FC;--light-gray:#E8ECF4;
+  --dark:#0F1729;--text:#1E293B;--text-light:#64748B;
+  --body:'Plus Jakarta Sans',system-ui,sans-serif;
+  --radius:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--off-white);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:70px}
+@media(min-width:769px){body{padding-bottom:0}}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* ═══ HEADER ═══ */
+.header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(6,18,64,.97);backdrop-filter:blur(12px);
+  padding:14px 20px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.header-logo{display:flex;align-items:center;gap:8px}
+.header-logo img{height:34px}
+.header-actions{display:flex;align-items:center;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  padding:12px 24px;border-radius:50px;font-weight:800;font-size:.88rem;
+  font-family:var(--body);border:none;cursor:pointer;transition:all .25s;letter-spacing:-.01em;
+}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 4px 20px var(--red-glow)}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--dark);box-shadow:0 4px 20px var(--gold-glow)}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-1px)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-light);transform:translateY(-1px)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-dark)}
+.btn-outline{background:transparent;border:2px solid var(--light-gray);color:var(--text)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.btn-sm{padding:10px 18px;font-size:.82rem}
+.btn-lg{padding:16px 32px;font-size:1rem}
+.menu-btn{
+  background:none;border:none;font-size:1.5rem;cursor:pointer;
+  color:rgba(255,255,255,.7);padding:4px 8px;display:flex;align-items:center;
+}
+.menu-btn:hover{color:#fff}
+
+/* ═══ SEARCH HERO ═══ */
+.search-hero{
+  background:linear-gradient(160deg,#0d2461 0%,var(--navy-dark) 50%,#150830 100%);
+  padding:48px 20px 40px;text-align:center;color:#fff;position:relative;overflow:hidden;
+}
+.search-hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 500px 300px at 70% 30%,rgba(251,191,36,.07) 0%,transparent 70%),
+    radial-gradient(ellipse 400px 300px at 30% 70%,rgba(37,99,235,.08) 0%,transparent 70%);
+}
+.search-hero>*{position:relative;z-index:1}
+.search-hero h1{
+  font-size:clamp(1.4rem,4vw,2.2rem);font-weight:900;line-height:1.15;
+  margin-bottom:8px;letter-spacing:-.03em;
+}
+.search-hero h1 em{color:var(--gold);font-style:normal}
+.search-hero p{font-size:.95rem;color:rgba(255,255,255,.6);margin-bottom:28px}
+
+.search-bar{
+  max-width:680px;margin:0 auto;background:var(--white);border-radius:16px;
+  padding:8px;display:flex;flex-direction:column;gap:8px;
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+.search-bar input{
+  width:100%;padding:14px 16px;border:1.5px solid var(--light-gray);border-radius:12px;
+  font-size:.9rem;font-family:var(--body);background:var(--off-white);
+}
+.search-bar input:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.search-bar .btn{width:100%;padding:14px;font-size:.95rem}
+@media(min-width:600px){
+  .search-bar{flex-direction:row;border-radius:60px;padding:6px}
+  .search-bar input{border-radius:50px;border:none;flex:1;background:transparent}
+  .search-bar input:focus{box-shadow:none}
+  .search-bar .btn{width:auto;min-width:160px;border-radius:50px}
+}
+
+/* ═══ CATEGORIES ═══ */
+.categories{padding:40px 20px 20px;background:var(--white)}
+.categories h2{font-size:1.2rem;font-weight:900;margin-bottom:20px;color:var(--dark);text-align:center}
+.cat-scroll{
+  display:flex;gap:10px;overflow-x:auto;padding-bottom:12px;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.cat-scroll::-webkit-scrollbar{display:none}
+.cat-chip{
+  flex-shrink:0;display:flex;align-items:center;gap:8px;
+  padding:10px 18px;border-radius:50px;background:var(--off-white);
+  border:2px solid var(--light-gray);cursor:pointer;transition:all .25s;
+  font-size:.82rem;font-weight:700;color:var(--text);white-space:nowrap;
+}
+.cat-chip:hover{border-color:var(--blue);color:var(--blue);background:rgba(37,99,235,.04)}
+.cat-chip.active{border-color:var(--blue);background:var(--blue);color:#fff}
+.cat-chip .cat-icon{font-size:1.2rem}
+.cat-chip .cat-count{
+  font-size:.7rem;font-weight:800;background:rgba(0,0,0,.08);
+  padding:2px 7px;border-radius:50px;color:var(--text-light);
+}
+.cat-chip.active .cat-count{background:rgba(255,255,255,.2);color:#fff}
+
+/* ═══ RESULTS ═══ */
+.results-section{padding:24px 20px 60px}
+.results-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:20px;flex-wrap:wrap;gap:12px;
+}
+.results-header h2{font-size:1rem;font-weight:800;color:var(--dark)}
+.results-header .count{
+  font-size:.82rem;font-weight:600;color:var(--text-light);
+  background:var(--white);padding:6px 14px;border-radius:50px;border:1px solid var(--light-gray);
+}
+.results-grid{
+  display:grid;grid-template-columns:1fr;gap:16px;
+}
+@media(min-width:640px){.results-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.results-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* Pro Card */
+.pro-card{
+  background:var(--white);border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--light-gray);transition:all .3s;
+  animation:cardIn .5s ease both;
+}
+.pro-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,31,92,.1);border-color:rgba(37,99,235,.2)}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.pro-card-top{
+  padding:20px 20px 0;display:flex;gap:14px;align-items:flex-start;
+}
+.pro-avatar{
+  width:56px;height:56px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--navy-light),var(--navy));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;color:rgba(255,255,255,.35);position:relative;
+}
+.pro-avatar img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.verified-dot{
+  position:absolute;bottom:-2px;right:-2px;width:18px;height:18px;
+  border-radius:50%;background:var(--green);border:2px solid var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.6rem;color:#fff;
+}
+.pro-info{flex:1;min-width:0}
+.pro-info h4{font-size:.95rem;font-weight:800;color:var(--dark);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.pro-info .badge{
+  font-size:.6rem;font-weight:800;background:rgba(37,211,102,.1);color:var(--green);
+  padding:2px 8px;border-radius:50px;text-transform:uppercase;letter-spacing:.04em;
+}
+.pro-info .role{font-size:.82rem;color:var(--text-light);margin-bottom:6px}
+.pro-rating{display:flex;align-items:center;gap:6px;font-size:.8rem}
+.pro-rating .stars{color:var(--gold);font-size:.85rem;letter-spacing:-1px}
+.pro-rating .num{font-weight:800;color:var(--dark)}
+.pro-rating .reviews{color:var(--text-light)}
+.pro-card-meta{
+  padding:12px 20px;display:flex;gap:16px;flex-wrap:wrap;
+  font-size:.78rem;color:var(--text-light);font-weight:600;
+}
+.pro-card-meta span{display:inline-flex;align-items:center;gap:4px}
+.pro-card-actions{
+  padding:12px 20px 16px;display:flex;gap:8px;border-top:1px solid var(--light-gray);
+}
+.pro-card-actions .btn{flex:1;padding:10px;font-size:.82rem}
+
+/* ═══ LOADING ═══ */
+.skeleton{
+  background:linear-gradient(90deg,var(--light-gray) 25%,#f0f2f8 50%,var(--light-gray) 75%);
+  background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:8px;
+}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.skeleton-card{
+  background:var(--white);border-radius:var(--radius);padding:20px;
+  border:1px solid var(--light-gray);
+}
+.skeleton-card .sk-avatar{width:56px;height:56px;border-radius:14px}
+.skeleton-card .sk-line{height:12px;margin-bottom:8px;border-radius:6px}
+.skeleton-card .sk-line.w60{width:60%}
+.skeleton-card .sk-line.w80{width:80%}
+.skeleton-card .sk-line.w40{width:40%}
+
+/* ═══ EMPTY STATE ═══ */
+.empty-state{
+  text-align:center;padding:60px 20px;
+}
+.empty-state .empty-icon{font-size:3.5rem;margin-bottom:16px;opacity:.4}
+.empty-state h3{font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:6px}
+.empty-state p{font-size:.88rem;color:var(--text-light);max-width:360px;margin:0 auto 20px;line-height:1.6}
+
+/* ═══ FOOTER ═══ */
+.footer{
+  padding:48px 20px 24px;background:var(--navy-dark);color:rgba(255,255,255,.6);
+  text-align:center;font-size:.82rem;
+}
+.footer-brand{margin-bottom:20px}
+.footer-brand img{height:32px;margin-bottom:8px;filter:brightness(10)}
+.footer-brand p{max-width:380px;margin:0 auto;line-height:1.6}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.footer-links a{color:rgba(255,255,255,.5);font-size:.8rem;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.35);border-top:1px solid rgba(255,255,255,.06);padding-top:16px}
+.footer-eco{margin-top:14px;font-size:.75rem;color:rgba(255,255,255,.3)}
+.footer-eco span{color:var(--gold);font-weight:800}
+
+/* ═══ WHATSAPP FLOAT ═══ */
+.wa-float{
+  position:fixed;bottom:90px;right:20px;z-index:900;
+  width:56px;height:56px;border-radius:50%;background:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;
+  font-size:1.8rem;color:#fff;transition:transform .2s;
+}
+.wa-float:hover{transform:scale(1.1)}
+
+/* ═══ STICKY FOOTER (MOBILE) ═══ */
+.sticky-footer{
+  position:fixed;bottom:0;left:0;right:0;z-index:950;
+  background:var(--white);border-top:1px solid rgba(10,31,92,.06);
+  padding:10px 16px;display:flex;gap:10px;
+  box-shadow:0 -4px 20px rgba(0,0,0,.08);
+}
+.sticky-footer .btn{flex:1;padding:14px 8px;font-size:.82rem;text-align:center;font-weight:800}
+@media(min-width:769px){.sticky-footer{display:none}}
+
+/* ═══ MOBILE NAV ═══ */
+.mobile-nav{
+  position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.6);
+  display:none;backdrop-filter:blur(6px);
+}
+.mobile-nav.open{display:block}
+.mobile-nav-panel{
+  position:absolute;right:0;top:0;bottom:0;width:280px;
+  background:var(--white);padding:24px;
+  box-shadow:-8px 0 40px rgba(0,0,0,.2);animation:slideIn .3s ease;
+}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.mobile-nav-close{
+  background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--text-light);
+  position:absolute;top:16px;right:16px;
+}
+.mobile-nav-panel a{
+  display:block;padding:14px 0;font-size:.95rem;font-weight:600;color:var(--dark);
+  border-bottom:1px solid var(--light-gray);
+}
+.mobile-nav-panel .nav-ctas{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.mobile-nav-panel .nav-ctas .btn{width:100%;text-align:center}
+
+/* ═══ MODAL ═══ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.55);
+  display:none;align-items:center;justify-content:center;
+  backdrop-filter:blur(4px);padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:var(--white);border-radius:20px;width:100%;max-width:440px;
+  max-height:90vh;overflow-y:auto;padding:32px 24px;position:relative;
+  box-shadow:0 24px 64px rgba(0,0,0,.2);animation:modalIn .25s ease;
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{
+  position:absolute;top:14px;right:14px;background:var(--light-gray);
+  border:none;width:32px;height:32px;border-radius:50%;font-size:1.2rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-light);
+}
+.modal-close:hover{background:var(--red);color:#fff}
+.modal h2{font-size:1.3rem;font-weight:900;margin-bottom:4px;color:var(--navy)}
+.modal .modal-sub{font-size:.85rem;color:var(--text-light);margin-bottom:24px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:12px 14px;border:1.5px solid var(--light-gray);border-radius:10px;
+  font-size:.88rem;font-family:var(--body);background:var(--off-white);
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.1);
+}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-error{color:var(--red);font-size:.75rem;margin-top:4px;display:none}
+.form-switch{font-size:.82rem;color:var(--text-light);margin-top:16px;text-align:center}
+.form-switch a{color:var(--blue);font-weight:700;cursor:pointer}
+.form-switch a:hover{text-decoration:underline}
+.btn-submit{width:100%;padding:14px;font-size:.95rem;margin-top:8px}
+.btn-submit:disabled{opacity:.5;cursor:not-allowed}
+
+/* ═══ STARS ═══ */
+.stars-display{display:inline-flex;gap:1px}
+.stars-display .star-filled{color:var(--gold)}
+.stars-display .star-empty{color:var(--light-gray)}
+
+/* ═══ REVIEW MODAL ═══ */
+.review-pro-name{font-size:1.1rem;font-weight:800;color:var(--dark);text-align:center;margin-bottom:4px}
+.review-star-select{display:flex;gap:6px;justify-content:center;margin:16px 0}
+.review-star-select span{font-size:2rem;cursor:pointer;color:var(--light-gray);transition:all .15s;line-height:1}
+.review-star-select span.active{color:var(--gold);transform:scale(1.15)}
+.review-star-select span:hover{color:var(--gold);transform:scale(1.2)}
+
+/* ═══ PRO DETAIL MODAL ═══ */
+.pro-detail-header{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.pro-detail-avatar{
+  width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,var(--navy-light),var(--navy));
+  display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:rgba(255,255,255,.3);flex-shrink:0;
+  overflow:hidden;
+}
+.pro-detail-avatar img{width:100%;height:100%;object-fit:cover}
+.pro-detail-info h3{font-size:1.2rem;font-weight:900;color:var(--dark)}
+.pro-detail-info .pro-role{font-size:.85rem;color:var(--text-light)}
+.pro-detail-stars{margin-top:4px}
+.pro-detail-section{margin-top:20px;padding-top:16px;border-top:1px solid var(--light-gray)}
+.pro-detail-section h4{font-size:.85rem;font-weight:800;color:var(--navy);margin-bottom:10px}
+.review-item{padding:12px 0;border-bottom:1px solid var(--light-gray)}
+.review-item:last-child{border-bottom:none}
+.review-item-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.review-item-header strong{font-size:.82rem}
+.review-item p{font-size:.8rem;color:var(--text-light);line-height:1.5}
+.no-reviews{font-size:.82rem;color:var(--text-light);font-style:italic}
+
+/* ═══ TOAST ═══ */
+.toast-container{position:fixed;top:20px;right:20px;z-index:4000;display:flex;flex-direction:column;gap:8px}
+.toast{
+  padding:14px 20px;border-radius:12px;font-size:.85rem;font-weight:600;
+  color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.15);
+  animation:toastIn .3s ease;min-width:280px;
+}
+.toast-success{background:#059669}
+.toast-error{background:var(--red)}
+.toast-info{background:var(--navy)}
+@keyframes toastIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+
+/* AUTH HEADER */
+.header-user{display:flex;align-items:center;gap:8px}
+.header-user-name{font-size:.82rem;font-weight:700;color:#fff}
+.header-user-avatar{
+  width:32px;height:32px;border-radius:50%;background:var(--blue);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:900;
+}
+.logged-in .guest-only{display:none!important}
+.logged-out .auth-only{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="/" class="header-logo">
+    <img src="assets/logo.png" alt="ProLakay">
+  </a>
+  <div class="header-actions">
+    <a href="/" class="btn btn-gold btn-sm" style="font-size:.75rem">Vin Pwofesyonèl</a>
+    <a href="#register" class="btn btn-red btn-sm guest-only">Enskri</a>
+    <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav" onclick="closeMenu(event)">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" onclick="toggleMenu()">&times;</button>
+    <a href="/">Vin Pwofesyonèl</a>
+    <a href="#categories">Kategori</a>
+    <a href="#results">Pwofesyonèl</a>
+    <a href="#post-job">Poste Travay</a>
+    <div class="nav-ctas">
+      <a href="#register" class="btn btn-red">Enskri Gratis</a>
+      <a href="#login" class="btn btn-navy">Konekte</a>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH HERO -->
+<section class="search-hero">
+  <h1>Jwenn Pwofesyonèl Ou Ka <em>Fè Konfyans</em></h1>
+  <p>Chèche pami pwofesyonèl verifye an Ayiti</p>
+  <div class="search-bar">
+    <input type="text" placeholder="Kisa w bezwen?" id="searchQuery" oninput="debouncedSearch()">
+    <input type="text" placeholder="Kote?" id="searchLocation" oninput="debouncedSearch()">
+    <button class="btn btn-red" onclick="doSearch()">&#128269; Chèche</button>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="container">
+    <h2>Kategori</h2>
+    <div class="cat-scroll" id="catScroll">
+      <div class="cat-chip active" onclick="selectCategory(null, this)">
+        <span>Tout</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section" id="results">
+  <div class="container">
+    <div class="results-header">
+      <h2 id="resultsTitle">Pwofesyonèl</h2>
+      <span class="count" id="resultsCount">Ap chaje...</span>
+    </div>
+    <div class="results-grid" id="resultsGrid"></div>
+    <div class="empty-state" id="emptyState" style="display:none">
+      <div class="empty-icon">&#128269;</div>
+      <h3>Pa gen rezilta</h3>
+      <p>Eseye yon lòt rechèch oswa gade tout kategori yo.</p>
+      <button class="btn btn-blue" onclick="selectCategory(null, document.querySelector('.cat-chip'))">Wè Tout Pwofesyonèl</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="ProLakay">
+      <p>Platfòm pou jwenn pwofesyonèl ou ka fè konfyans an Ayiti. Rapid, sekirize, fyab.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Vin Pwofesyonèl</a>
+      <a href="#categories">Kategori</a>
+      <a href="#post-job">Poste Travay</a>
+      <a href="https://wa.me/50946859702" target="_blank">WhatsApp</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 ProLakay. Tout dwa rezève.</div>
+    <div class="footer-eco">Yon platfòm <span>HaitiBiznis</span></div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/50946859702" target="_blank" class="wa-float" title="WhatsApp">&#128172;</a>
+
+<!-- STICKY FOOTER (MOBILE) -->
+<div class="sticky-footer">
+  <button class="btn btn-blue" onclick="document.getElementById('searchQuery').focus();window.scrollTo({top:0,behavior:'smooth'})">&#128269; Chèche</button>
+  <a href="#post-job" class="btn btn-gold">Poste Travay</a>
+  <a href="#register" class="btn btn-red guest-only">Enskri</a>
+</div>
+
+<!-- TOAST -->
+<div class="toast-container" id="toasts"></div>
+
+<!-- REGISTER MODAL -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('registerModal')">&times;</button>
+    <h2>Kreye Kont Ou</h2>
+    <p class="modal-sub">Enskri gratis epi jwenn pwofesyonèl verifye</p>
+    <form id="registerForm" onsubmit="handleRegister(event)">
+      <div class="form-group">
+        <label>Non Konplè</label>
+        <input type="text" name="full_name" placeholder="Ex: Jean Pierre" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Telefòn</label>
+          <input type="tel" name="phone" placeholder="+509..." required>
+        </div>
+        <div class="form-group">
+          <label>Imèl (opsyonèl)</label>
+          <input type="email" name="email" placeholder="ou@imèl.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Modpas</label>
+        <input type="password" name="password" placeholder="Omwen 6 karaktè" required minlength="6">
+      </div>
+      <div class="form-group">
+        <label>Mwen se...</label>
+        <select name="role">
+          <option value="client">Kliyan (m ap chèche pwofesyonèl)</option>
+          <option value="professional">Pwofesyonèl (m ap ofri sèvis)</option>
+        </select>
+      </div>
+      <div class="form-error" id="registerError"></div>
+      <button type="submit" class="btn btn-red btn-submit" id="registerBtn">Kreye Kont</button>
+    </form>
+    <div class="form-switch">Ou gen kont deja? <a onclick="switchModal('registerModal','loginModal')">Konekte</a></div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+    <h2>Konekte</h2>
+    <p class="modal-sub">Antre nan kont ou</p>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label>Telefòn</label>
+        <input type="tel" name="phone" placeholder="+509..." required>
+      </div>
+      <div class="form-group">
+        <label>Modpas</label>
+        <input type="password" name="password" placeholder="Modpas ou" required>
+      </div>
+      <div class="form-error" id="loginError"></div>
+      <button type="submit" class="btn btn-navy btn-submit" id="loginBtn">Konekte</button>
+    </form>
+    <div class="form-switch">Ou pa gen kont? <a onclick="switchModal('loginModal','registerModal')">Enskri Gratis</a></div>
+  </div>
+</div>
+
+<!-- POST JOB MODAL -->
+<div class="modal-overlay" id="jobModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('jobModal')">&times;</button>
+    <h2>Poste Yon Travay</h2>
+    <p class="modal-sub">Dekri sa ou bezwen, pwofesyonèl yo ap jwenn ou</p>
+    <form id="jobForm" onsubmit="handlePostJob(event)">
+      <div class="form-group">
+        <label>Tit Travay</label>
+        <input type="text" name="title" placeholder="Ex: Bezwen plonbye pou kay" required>
+      </div>
+      <div class="form-group">
+        <label>Kategori</label>
+        <select name="category_id" id="jobCategory" required>
+          <option value="">Chwazi yon kategori...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Deskripsyon</label>
+        <textarea name="description" placeholder="Bay plis detay sou travay la..." required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Kote</label>
+          <input type="text" name="location" placeholder="Ex: Petion-Ville" required>
+        </div>
+        <div class="form-group">
+          <label>Bidjè (HTG)</label>
+          <input type="number" name="budget" placeholder="Ex: 5000">
+        </div>
+      </div>
+      <div class="form-error" id="jobError"></div>
+      <button type="submit" class="btn btn-gold btn-submit" id="jobBtn">Pibliye Travay</button>
+    </form>
+  </div>
+</div>
+
+<!-- PRO DETAIL MODAL -->
+<div class="modal-overlay" id="proDetailModal">
+  <div class="modal" style="max-width:520px">
+    <button class="modal-close" onclick="closeModal('proDetailModal')">&times;</button>
+    <div id="proDetailContent"></div>
+  </div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div class="modal-overlay" id="reviewModal">
+  <div class="modal" style="max-width:400px">
+    <button class="modal-close" onclick="closeModal('reviewModal')">&times;</button>
+    <h2 style="text-align:center">Bay Evalyasyon</h2>
+    <div class="review-pro-name" id="reviewProName"></div>
+    <div class="review-star-select" id="reviewStars">
+      <span onclick="setReviewStar(1)" data-star="1">&#11088;</span>
+      <span onclick="setReviewStar(2)" data-star="2">&#11088;</span>
+      <span onclick="setReviewStar(3)" data-star="3">&#11088;</span>
+      <span onclick="setReviewStar(4)" data-star="4">&#11088;</span>
+      <span onclick="setReviewStar(5)" data-star="5">&#11088;</span>
+    </div>
+    <form id="reviewForm" onsubmit="handleReview(event)">
+      <input type="hidden" name="professional_id" id="reviewProId">
+      <input type="hidden" name="rating" id="reviewRating" value="0">
+      <div class="form-group">
+        <label>Kòmantè (opsyonèl)</label>
+        <textarea name="comment" placeholder="Ki eksperyans ou te fè?"></textarea>
+      </div>
+      <div class="form-error" id="reviewError"></div>
+      <button type="submit" class="btn btn-gold btn-submit">Voye Evalyasyon</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const API = 'https://prolakay-api.onrender.com/api';
+let authToken = localStorage.getItem('prolakay_token');
+let currentUser = JSON.parse(localStorage.getItem('prolakay_user') || 'null');
+let currentCategory = null;
+let allCategories = [];
+
+function updateAuthUI() {
+  const body = document.body;
+  if (authToken && currentUser) {
+    body.classList.add('logged-in');
+    body.classList.remove('logged-out');
+    const actions = document.querySelector('.header-actions');
+    const existing = actions.querySelector('.header-user');
+    if (existing) existing.remove();
+    const initials = currentUser.full_name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+    const div = document.createElement('div');
+    div.className = 'header-user';
+    div.innerHTML = '<span class="header-user-name">' + currentUser.full_name.split(' ')[0] + '</span><div class="header-user-avatar">' + initials + '</div>';
+    actions.insertBefore(div, actions.querySelector('.menu-btn'));
+  } else {
+    body.classList.add('logged-out');
+    body.classList.remove('logged-in');
+    const existing = document.querySelector('.header-user');
+    if (existing) existing.remove();
+  }
+}
+
+function toast(msg, type) {
+  const c = document.getElementById('toasts');
+  const t = document.createElement('div');
+  t.className = 'toast toast-' + (type || 'info');
+  t.textContent = msg;
+  c.appendChild(t);
+  setTimeout(() => t.remove(), 4000);
+}
+
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function switchModal(from, to) { closeModal(from); setTimeout(() => openModal(to), 200); }
+
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); });
+});
+document.querySelectorAll('a[href="#register"]').forEach(a => {
+  a.addEventListener('click', e => { e.preventDefault(); openModal('registerModal'); });
+});
+document.querySelectorAll('a[href="#login"]').forEach(a => {
+  a.addEventListener('click', e => { e.preventDefault(); openModal('loginModal'); });
+});
+document.querySelectorAll('a[href="#post-job"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    if (!authToken) { toast('Ou dwe konekte anvan', 'error'); openModal('loginModal'); return; }
+    openModal('jobModal');
+  });
+});
+
+function renderStars(rating, size) {
+  const full = Math.round(rating);
+  let html = '';
+  for (let i = 1; i <= 5; i++) {
+    html += '<span class="' + (i <= full ? 'star-filled' : 'star-empty') + '">&#9733;</span>';
+  }
+  return '<span class="stars-display" style="font-size:' + (size || '.85rem') + '">' + html + '</span>';
+}
+
+function showSkeletons() {
+  const grid = document.getElementById('resultsGrid');
+  let html = '';
+  for (let i = 0; i < 6; i++) {
+    html += '<div class="skeleton-card"><div style="display:flex;gap:14px;margin-bottom:16px"><div class="skeleton sk-avatar"></div><div style="flex:1"><div class="skeleton sk-line w80"></div><div class="skeleton sk-line w60"></div><div class="skeleton sk-line w40"></div></div></div><div class="skeleton sk-line w60"></div></div>';
+  }
+  grid.innerHTML = html;
+  document.getElementById('emptyState').style.display = 'none';
+}
+
+async function loadCategories() {
+  try {
+    const r = await fetch(API + '/search/categories');
+    const data = await r.json();
+    allCategories = data.categories || data || [];
+    const scroll = document.getElementById('catScroll');
+    const jobSel = document.getElementById('jobCategory');
+    allCategories.forEach(c => {
+      const chip = document.createElement('div');
+      chip.className = 'cat-chip';
+      chip.innerHTML = '<span class="cat-icon">' + (c.icon || '') + '</span><span>' + (c.name_ht || c.name) + '</span><span class="cat-count">' + (c.professional_count || 0) + '</span>';
+      chip.onclick = function() { selectCategory(c.id, this); };
+      scroll.appendChild(chip);
+
+      if (jobSel) {
+        const opt = document.createElement('option');
+        opt.value = c.id;
+        opt.textContent = c.name_ht || c.name;
+        jobSel.appendChild(opt);
+      }
+    });
+  } catch (err) {}
+}
+
+function selectCategory(catId, el) {
+  currentCategory = catId;
+  document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+  if (el) el.classList.add('active');
+  const catName = catId ? allCategories.find(c => c.id === catId) : null;
+  document.getElementById('resultsTitle').textContent = catName ? (catName.name_ht || catName.name) : 'Pwofesyonèl';
+  doSearch();
+}
+
+let searchTimeout;
+function debouncedSearch() {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(doSearch, 300);
+}
+
+async function doSearch() {
+  const q = document.getElementById('searchQuery').value.trim();
+  const loc = document.getElementById('searchLocation').value.trim();
+  showSkeletons();
+
+  let url = API + '/search?limit=50';
+  if (q) url += '&q=' + encodeURIComponent(q);
+  if (loc) url += '&location=' + encodeURIComponent(loc);
+  if (currentCategory) url += '&category=' + currentCategory;
+
+  try {
+    const r = await fetch(url);
+    const data = await r.json();
+    const pros = data.results || data.professionals || data || [];
+    renderResults(pros);
+  } catch (err) {
+    document.getElementById('resultsGrid').innerHTML = '';
+    document.getElementById('emptyState').style.display = 'block';
+    document.getElementById('resultsCount').textContent = 'Erè koneksyon';
+  }
+}
+
+function renderResults(pros) {
+  const grid = document.getElementById('resultsGrid');
+  const empty = document.getElementById('emptyState');
+  const count = document.getElementById('resultsCount');
+
+  if (!pros.length) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    count.textContent = '0 rezilta';
+    return;
+  }
+
+  empty.style.display = 'none';
+  count.textContent = pros.length + ' pwofesyonèl';
+
+  grid.innerHTML = pros.map((p, i) => {
+    const user = p.User || p.user || {};
+    const name = user.full_name || p.full_name || 'Pwofesyonèl';
+    const role = p.subcategory || '';
+    const cat = p.Category || {};
+    const rating = p.rating || 0;
+    const reviews = p.total_reviews || 0;
+    const loc = p.location || '';
+    const price = p.price_range || '';
+    const verified = p.is_verified;
+    const phone = user.phone || p.whatsapp || '';
+    const wa = p.whatsapp || phone;
+
+    return '<div class="pro-card" style="animation-delay:' + (i * .06) + 's">' +
+      '<div class="pro-card-top">' +
+        '<div class="pro-avatar">&#128100;' + (verified ? '<div class="verified-dot">&#10003;</div>' : '') + '</div>' +
+        '<div class="pro-info">' +
+          '<h4>' + name + (verified ? ' <span class="badge">Verifye</span>' : '') + '</h4>' +
+          '<div class="role">' + role + (cat.name_ht ? ' &middot; ' + cat.name_ht : '') + '</div>' +
+          '<div class="pro-rating">' +
+            '<span class="stars">' + renderStars(rating, '.82rem') + '</span>' +
+            '<span class="num">' + rating.toFixed(1) + '</span>' +
+            '<span class="reviews">(' + reviews + ')</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="pro-card-meta">' +
+        (loc ? '<span>&#128205; ' + loc + '</span>' : '') +
+        (price ? '<span>&#128176; ' + price + '</span>' : '') +
+        (p.years_experience ? '<span>&#128197; ' + p.years_experience + ' an</span>' : '') +
+      '</div>' +
+      '<div class="pro-card-actions">' +
+        '<button class="btn btn-blue btn-sm" onclick="openProDetail(' + p.id + ')">Wè Pwofil</button>' +
+        (wa ? '<a href="https://wa.me/' + wa.replace(/[^0-9]/g, '') + '" target="_blank" class="btn btn-green btn-sm">&#128172; WhatsApp</a>' : '') +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+async function openProDetail(proId) {
+  const c = document.getElementById('proDetailContent');
+  c.innerHTML = '<p style="text-align:center;padding:40px;color:var(--text-light)">Ap chaje...</p>';
+  openModal('proDetailModal');
+  try {
+    const [proRes, revRes] = await Promise.all([
+      fetch(API + '/professionals/' + proId),
+      fetch(API + '/reviews/professional/' + proId)
+    ]);
+    const pro = await proRes.json();
+    const reviews = await revRes.json();
+    const p = pro.professional || pro;
+    const user = p.User || p.user || {};
+    const name = user.full_name || p.full_name || 'Pwofesyonèl';
+    const role = p.subcategory || (p.Category ? p.Category.name_ht : '');
+    const rating = p.rating || 0;
+    const totalR = p.total_reviews || 0;
+    const loc = p.location || '';
+    const desc = p.description || '';
+    const exp = p.years_experience || 0;
+    const price = p.price_range || '';
+    const phone = user.phone || '';
+    const wa = p.whatsapp || phone;
+    const revList = reviews.reviews || reviews || [];
+
+    let html = '<div class="pro-detail-header">';
+    html += '<div class="pro-detail-avatar">&#128100;</div>';
+    html += '<div class="pro-detail-info"><h3>' + name + '</h3>';
+    html += '<div class="pro-role">' + role + (loc ? ' &middot; ' + loc : '') + '</div>';
+    html += '<div class="pro-detail-stars">' + renderStars(rating) + ' <span style="font-size:.78rem;color:var(--text-light);margin-left:4px">' + rating.toFixed(1) + ' (' + totalR + ' evalyasyon)</span></div>';
+    html += '</div></div>';
+
+    if (desc) html += '<p style="font-size:.85rem;color:var(--text-light);line-height:1.6;margin-bottom:12px">' + desc + '</p>';
+
+    html += '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;font-size:.82rem;color:var(--text-light);font-weight:600">';
+    if (exp) html += '<span>&#128197; ' + exp + ' an eksperyans</span>';
+    if (price) html += '<span>&#128176; ' + price + '</span>';
+    html += '</div>';
+
+    html += '<div style="display:flex;gap:8px;margin-bottom:8px">';
+    if (wa) html += '<a href="https://wa.me/' + wa.replace(/[^0-9]/g, '') + '" target="_blank" class="btn btn-green" style="flex:1">&#128172; WhatsApp</a>';
+    if (phone) html += '<a href="tel:' + phone + '" class="btn btn-blue" style="flex:1">&#128222; Rele</a>';
+    html += '</div>';
+    html += '<button class="btn btn-gold" style="width:100%;margin-bottom:8px" onclick="closeModal(\'proDetailModal\');openReviewModal(' + proId + ',\'' + name.replace(/'/g, "\\'") + '\')">&#11088; Bay Evalyasyon</button>';
+
+    html += '<div class="pro-detail-section"><h4>Evalyasyon (' + revList.length + ')</h4>';
+    if (revList.length === 0) {
+      html += '<p class="no-reviews">Pa gen evalyasyon ankò</p>';
+    } else {
+      revList.slice(0, 10).forEach(r => {
+        const rUser = r.User || r.reviewer || r.client || {};
+        html += '<div class="review-item"><div class="review-item-header"><strong>' + (rUser.full_name || 'Kliyan') + '</strong>' + renderStars(r.rating, '.75rem') + '</div>';
+        if (r.comment) html += '<p>' + r.comment + '</p>';
+        html += '</div>';
+      });
+    }
+    html += '</div>';
+    c.innerHTML = html;
+  } catch (err) {
+    c.innerHTML = '<p style="text-align:center;padding:40px;color:var(--red)">Pa ka chaje pwofil la.</p>';
+  }
+}
+
+async function handleRegister(e) {
+  e.preventDefault();
+  const btn = document.getElementById('registerBtn');
+  const errEl = document.getElementById('registerError');
+  btn.disabled = true; btn.textContent = 'Ap kreye...'; errEl.style.display = 'none';
+  const fd = new FormData(e.target);
+  const data = Object.fromEntries(fd);
+  try {
+    const r = await fetch(API + '/auth/register', {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    authToken = j.token; currentUser = j.user;
+    localStorage.setItem('prolakay_token', authToken);
+    localStorage.setItem('prolakay_user', JSON.stringify(currentUser));
+    updateAuthUI(); closeModal('registerModal');
+    toast('Byenveni, ' + currentUser.full_name + '!', 'success');
+    e.target.reset();
+  } catch (err) { errEl.textContent = err.message; errEl.style.display = 'block'; }
+  btn.disabled = false; btn.textContent = 'Kreye Kont';
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  const btn = document.getElementById('loginBtn');
+  const errEl = document.getElementById('loginError');
+  btn.disabled = true; btn.textContent = 'Ap konekte...'; errEl.style.display = 'none';
+  const fd = new FormData(e.target);
+  const data = Object.fromEntries(fd);
+  try {
+    const r = await fetch(API + '/auth/login', {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    authToken = j.token; currentUser = j.user;
+    localStorage.setItem('prolakay_token', authToken);
+    localStorage.setItem('prolakay_user', JSON.stringify(currentUser));
+    updateAuthUI(); closeModal('loginModal');
+    toast('Konekte! Byenveni, ' + currentUser.full_name, 'success');
+    e.target.reset();
+  } catch (err) { errEl.textContent = err.message; errEl.style.display = 'block'; }
+  btn.disabled = false; btn.textContent = 'Konekte';
+}
+
+async function handlePostJob(e) {
+  e.preventDefault();
+  const btn = document.getElementById('jobBtn');
+  const errEl = document.getElementById('jobError');
+  btn.disabled = true; btn.textContent = 'Ap pibliye...'; errEl.style.display = 'none';
+  const fd = new FormData(e.target);
+  const data = Object.fromEntries(fd);
+  if (data.budget) data.budget = parseInt(data.budget);
+  if (data.category_id) data.category_id = parseInt(data.category_id);
+  try {
+    const r = await fetch(API + '/jobs', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken},
+      body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    closeModal('jobModal');
+    toast('Travay pibliye avèk siksè!', 'success');
+    e.target.reset();
+  } catch (err) { errEl.textContent = err.message; errEl.style.display = 'block'; }
+  btn.disabled = false; btn.textContent = 'Pibliye Travay';
+}
+
+let reviewSelectedRating = 0;
+function setReviewStar(n) {
+  reviewSelectedRating = n;
+  document.getElementById('reviewRating').value = n;
+  document.querySelectorAll('#reviewStars span').forEach(s => {
+    s.classList.toggle('active', parseInt(s.dataset.star) <= n);
+  });
+}
+
+function openReviewModal(proId, proName) {
+  if (!authToken) { toast('Ou dwe konekte pou bay evalyasyon', 'error'); openModal('loginModal'); return; }
+  document.getElementById('reviewProId').value = proId;
+  document.getElementById('reviewProName').textContent = proName;
+  reviewSelectedRating = 0;
+  document.querySelectorAll('#reviewStars span').forEach(s => s.classList.remove('active'));
+  document.getElementById('reviewForm').reset();
+  openModal('reviewModal');
+}
+
+async function handleReview(e) {
+  e.preventDefault();
+  const errEl = document.getElementById('reviewError');
+  errEl.style.display = 'none';
+  if (reviewSelectedRating === 0) { errEl.textContent = 'Tanpri chwazi yon nòt (1-5 etwal)'; errEl.style.display = 'block'; return; }
+  const fd = new FormData(e.target);
+  const data = { professional_id: parseInt(fd.get('professional_id')), rating: reviewSelectedRating, comment: fd.get('comment') || '' };
+  try {
+    const r = await fetch(API + '/reviews', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Authorization':'Bearer ' + authToken},
+      body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || j.message || 'Erè');
+    closeModal('reviewModal');
+    toast('Mèsi pou evalyasyon ou!', 'success');
+  } catch (err) { errEl.textContent = err.message; errEl.style.display = 'block'; }
+}
+
+function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open')}
+function closeMenu(e){if(e.target===document.getElementById('mobileNav'))toggleMenu()}
+document.querySelectorAll('.mobile-nav-panel a').forEach(a=>{
+  a.addEventListener('click',()=>toggleMenu());
+});
+
+// Init
+updateAuthUI();
+showSkeletons();
+loadCategories().then(() => doSearch());
+</script>
+</body>
+</html>
