@@ -8,7 +8,7 @@
 <meta property="og:title" content="ProLakay — Jwenn Pwofesyonèl Verifye">
 <meta property="og:description" content="Chèche pami pwofesyonèl verifye an Ayiti. Rapid, sekirize, fyab.">
 <meta name="theme-color" content="#0A1F5C">
-<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="icon" type="image/png" href="assets/prolakay-logo-new.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@ a{text-decoration:none;color:inherit}
   font-size:clamp(1.4rem,4vw,2.2rem);font-weight:900;line-height:1.15;
   margin-bottom:8px;letter-spacing:-.03em;
 }
-.search-hero h1 em{color:var(--gold);font-style:normal}
+.search-hero h1 em{color:var(--red);font-style:normal;text-shadow:0 0 30px var(--red-glow)}
 .search-hero p{font-size:.95rem;color:rgba(255,255,255,.6);margin-bottom:28px}
 
 .search-bar{
@@ -224,7 +224,7 @@ a{text-decoration:none;color:inherit}
 .footer-links a:hover{color:#fff}
 .footer-copy{font-size:.75rem;color:rgba(255,255,255,.35);border-top:1px solid rgba(255,255,255,.06);padding-top:16px}
 .footer-eco{margin-top:14px;font-size:.75rem;color:rgba(255,255,255,.3)}
-.footer-eco span{color:var(--gold);font-weight:800}
+.footer-eco span{color:var(--blue-light);font-weight:800}
 
 /* ═══ WHATSAPP FLOAT ═══ */
 .wa-float{
@@ -369,10 +369,10 @@ a{text-decoration:none;color:inherit}
 <!-- HEADER -->
 <header class="header">
   <a href="/" class="header-logo">
-    <img src="assets/logo.png" alt="ProLakay">
+    <img src="assets/prolakay-logo-new.png" alt="ProLakay">
   </a>
   <div class="header-actions">
-    <a href="/" class="btn btn-gold btn-sm" style="font-size:.75rem">Vin Pwofesyonèl</a>
+    <a href="/" class="btn btn-blue btn-sm" style="font-size:.75rem">Vin Pwofesyonèl</a>
     <a href="#register" class="btn btn-red btn-sm guest-only">Enskri</a>
     <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
   </div>
@@ -437,7 +437,7 @@ a{text-decoration:none;color:inherit}
 <footer class="footer">
   <div class="container">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="ProLakay">
+      <img src="assets/prolakay-logo-new.png" alt="ProLakay">
       <p>Platfòm pou jwenn pwofesyonèl ou ka fè konfyans an Ayiti. Rapid, sekirize, fyab.</p>
     </div>
     <div class="footer-links">
@@ -457,7 +457,7 @@ a{text-decoration:none;color:inherit}
 <!-- STICKY FOOTER (MOBILE) -->
 <div class="sticky-footer">
   <button class="btn btn-blue" onclick="document.getElementById('searchQuery').focus();window.scrollTo({top:0,behavior:'smooth'})">&#128269; Chèche</button>
-  <a href="#post-job" class="btn btn-gold">Poste Travay</a>
+  <a href="#post-job" class="btn btn-blue">Poste Travay</a>
   <a href="#register" class="btn btn-red guest-only">Enskri</a>
 </div>
 
@@ -557,7 +557,7 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <div class="form-error" id="jobError"></div>
-      <button type="submit" class="btn btn-gold btn-submit" id="jobBtn">Pibliye Travay</button>
+      <button type="submit" class="btn btn-blue btn-submit" id="jobBtn">Pibliye Travay</button>
     </form>
   </div>
 </div>
@@ -591,7 +591,7 @@ a{text-decoration:none;color:inherit}
         <textarea name="comment" placeholder="Ki eksperyans ou te fè?"></textarea>
       </div>
       <div class="form-error" id="reviewError"></div>
-      <button type="submit" class="btn btn-gold btn-submit">Voye Evalyasyon</button>
+      <button type="submit" class="btn btn-blue btn-submit">Voye Evalyasyon</button>
     </form>
   </div>
 </div>
@@ -837,7 +837,7 @@ async function openProDetail(proId) {
     if (wa) html += '<a href="https://wa.me/' + wa.replace(/[^0-9]/g, '') + '" target="_blank" class="btn btn-green" style="flex:1">&#128172; WhatsApp</a>';
     if (phone) html += '<a href="tel:' + phone + '" class="btn btn-blue" style="flex:1">&#128222; Rele</a>';
     html += '</div>';
-    html += '<button class="btn btn-gold" style="width:100%;margin-bottom:8px" onclick="closeModal(\'proDetailModal\');openReviewModal(' + proId + ',\'' + name.replace(/'/g, "\\'") + '\')">&#11088; Bay Evalyasyon</button>';
+    html += '<button class="btn btn-blue" style="width:100%;margin-bottom:8px" onclick="closeModal(\'proDetailModal\');openReviewModal(' + proId + ',\'' + name.replace(/'/g, "\\'") + '\')">&#11088; Bay Evalyasyon</button>';
 
     html += '<div class="pro-detail-section"><h4>Evalyasyon (' + revList.length + ')</h4>';
     if (revList.length === 0) {
