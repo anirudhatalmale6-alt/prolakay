@@ -742,21 +742,48 @@ async function sendMessage() {
   scrollToBottom(false);
 
   try {
-    await apiFetch('/messages/conversations/' + currentConvId + '/messages', {
+    const res = await fetch(API + '/messages/conversations/' + currentConvId + '/messages', {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
       body: JSON.stringify({ content: content, type: 'text' })
     });
-    // Reload to get the real message
-    await pollNewMessages();
+    if (res.status === 429) {
+      const errData = await res.json();
+      showContactWarning(errData.error || 'Ou eseye pataje kontak twòp fwa.');
+      messages = messages.filter(m => m.id !== tempMsg.id);
+      renderMessages();
+    } else if (res.ok) {
+      const data = await res.json();
+      if (data.contact_warning) {
+        showContactWarning(data.warning_message || 'Enfòmasyon kontak kache pou sekirite ou. Kontak ap disponib apre konfime rezèvasyon/peman.');
+      }
+      await pollNewMessages();
+    } else {
+      throw new Error('Erè ' + res.status);
+    }
   } catch (err) {
-    // Remove optimistic message on error
     messages = messages.filter(m => m.id !== tempMsg.id);
     renderMessages();
-    alert('Erè: Pa kapab voye mesaj la. ' + err.message);
+    if (err.message && !err.message.includes('429')) {
+      alert('Erè: Pa kapab voye mesaj la.');
+    }
   } finally {
     sendBtn.disabled = false;
     input.focus();
   }
+}
+
+function showContactWarning(msg) {
+  var el = document.getElementById('contactWarning');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'contactWarning';
+    el.style.cssText = 'position:fixed;bottom:80px;left:12px;right:12px;background:#FEF3C7;border:1px solid #F59E0B;color:#92400E;padding:12px 16px;border-radius:12px;font-size:.82rem;z-index:100;line-height:1.4;max-width:520px;margin:0 auto;animation:fadeIn .3s ease';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.style.display = 'block';
+  setTimeout(function() { el.style.display = 'none'; }, 6000);
 }
 
 // ─── Polling ───
